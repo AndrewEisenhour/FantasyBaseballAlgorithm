@@ -17,7 +17,12 @@ espn_headers = {
 espn_cookies={"swid": "{2E92D10F-BFFF-42DA-92D1-0FBFFFE2DA5B}",
                           "espn_s2": "AECYMvoKdqc5EXl7XHnD%2F0V5JL00t79IBxCw9hlQdX6poEdllC3EveSvM1jBuRyR8qu9uA6qgzu5B9O7cqN%2BDb1AhOPE%2FI6tTIjX6ScPhKdh3jnplcNvtqNmu4sBtx9YNjt3Lq7uMQViwmJ9rkmUJK9W26ZOdn8WK2qNhHp3msPKF31MYJ3jISUEJCfhcAci%2BpRjqjDIED7xL%2BXzWSnTKYhHkBRiyXLJF8ocmG6X9mkGnyGAjV8rUj88KAlnSSRJkfawwhojrQ3vkJPTGUfE2a3ZiF9MXhmw2qw60KMu67c1jQ%3D%3D"}
 
-r = requests.get(playerUrl, cookies = espn_cookies, headers = espn_headers)
+r = requests.get(playerDataUrl, cookies = espn_cookies, headers = espn_headers)
 rawPlayerData = r.json()
-with open('ESPNPlayerData.json', 'w') as outfile:
+with open('ESPNData.json', 'w') as outfile:
     json.dump(rawPlayerData, outfile)
+    
+espn_players = rawPlayerData['players']
+player_details = espn_players[0]
+
+print(player_details)
