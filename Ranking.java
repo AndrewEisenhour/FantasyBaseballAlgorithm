@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 class batter {
+	public String id;
 	public String name;
 	public double avg;
 	public double runs;
@@ -10,13 +11,14 @@ class batter {
 	public double sbs;
 	// public double total;
 
-	public batter(String _name, double d, double e, double f, double g, double _avg) {
+	public batter(String _id, String _name, double d, double e, double f, double g, double _avg) {
 		name = _name;
 		runs = d;
 		rbis = e;
 		hrs = f;
 		sbs = g;
 		avg = _avg;
+		id = _id;
 	}
 }
 
@@ -27,15 +29,17 @@ class pitcher {
 	public double svs;
 	public double era;
 	public double whip;
+	public String id;
 	// public double total;
 
-	public pitcher(String _name, double d, double e, double f, double g, double _avg) {
+	public pitcher(String _id, String _name, double d, double e, double f, double g, double _avg) {
 		name = _name;
 		ks = d;
 		ws = e;
 		svs = f;
 		era = g;
 		whip = _avg;
+		id = _id;
 	}
 }
 
@@ -168,10 +172,12 @@ class team {
 class player {
 	public double total;
 	public String name;
+	public String id;
 
-	public player(String _name, double a) {
+	public player(String _name, double _total, String _id) {
 		name = _name;
-		total = a;
+		total = _total;
+		id = _id;
 	}
 }
 
@@ -286,8 +292,6 @@ public class Ranking {
 	}
 
 	public static lists run() throws Exception {
-		File batters = new File("");
-		// System.out.println(batters.getAbsolutePath());
 		Scanner scan = new Scanner(System.in);
 		try {
 			Scanner fileScan = new Scanner(new File("batters2.txt"));
@@ -298,7 +302,7 @@ public class Ranking {
 				batterInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info.add(new batter(batterInfo[3], Double.parseDouble(batterInfo[4]),
+				info.add(new batter(batterInfo[0], batterInfo[3], Double.parseDouble(batterInfo[4]),
 						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
 						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8])));
 			}
@@ -312,14 +316,14 @@ public class Ranking {
 			batter temp;
 			player temp2;
 			for (batter i : info) {
-				temp = new batter(i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
+				temp = new batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
 						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD);
-				temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg);
+				temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id);
 				stats.add(temp2);
 			}
 
 			// Pitchers next
-			fileScan = new Scanner(new File("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\pitchers2.txt"));
+			fileScan = new Scanner(new File("pitchers2.txt"));
 			String[] pitcherInfo;
 			// int counter = 0;
 			ArrayList<pitcher> info2 = new ArrayList<pitcher>();
@@ -327,7 +331,7 @@ public class Ranking {
 				pitcherInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info2.add(new pitcher(pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
+				info2.add(new pitcher(pitcherInfo[0], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
 						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8])));
 			}
@@ -339,9 +343,9 @@ public class Ranking {
 			double eraSD = eraSD(info2, joe.era);
 			double whipSD = whipSD(info2, joe.whip);
 			for (pitcher i : info2) {
-				temp3 = new pitcher(i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD, (i.svs - joe.svs) / svSD,
+				temp3 = new pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD, (i.svs - joe.svs) / svSD,
 						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD);
-				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip);
+				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id);
 				stats.add(temp2);
 			}
 
@@ -357,7 +361,6 @@ public class Ranking {
 			System.out.println("Bad file");
 			return null;
 		}
-
 	}
 
 	public static lists run2(ArrayList<batter> info, ArrayList<pitcher> info2, team myTeam) throws Exception {
@@ -375,10 +378,10 @@ public class Ranking {
 		batter temp;
 		player temp2;
 		for (batter i : info) {
-			temp = new batter(i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
+			temp = new batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
 					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
 					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD);
-			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg);
+			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id);
 			stats.add(temp2);
 		}
 
@@ -392,10 +395,10 @@ public class Ranking {
 		double eraSD = eraSD(info2, joe.era);
 		double whipSD = whipSD(info2, joe.whip);
 		for (pitcher i : info2) {
-			temp3 = new pitcher(i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD, myTeam.wNeed * (i.ws - joe.ws) / wSD,
+			temp3 = new pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD, myTeam.wNeed * (i.ws - joe.ws) / wSD,
 					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
 					myTeam.whipNeed * (joe.whip - i.whip) / whipSD);
-			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip);
+			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, i.name);
 			stats.add(temp2);
 		}
 
@@ -415,12 +418,12 @@ public class Ranking {
 	}
 
 	private static batter comp(ArrayList<batter> info) {
-		batter generic = new batter("Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info));
+		batter generic = new batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info));
 		return generic;
 	}
 
 	private static pitcher comp2(ArrayList<pitcher> info) {
-		pitcher generic = new pitcher("Vanilla Joe", ks(info), ws(info), svs(info), era(info), whip(info));
+		pitcher generic = new pitcher("0", "Vanilla Joe", ks(info), ws(info), svs(info), era(info), whip(info));
 		return generic;
 	}
 
