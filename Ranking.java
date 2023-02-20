@@ -69,16 +69,16 @@ class team {
 	double svNeed;
 	double eraNeed;
 	double whipNeed;
-	final double runs = 1465;
-	final double hrs = 456;
-	final double rbis = 1444;
-	final double sbs = 173;
-	final double avg = 0.269;
-	final double ks = 2155;
-	final double ws = 124;
-	final double svs = 136;
-	final double era = 3.66;
-	final double whip = 1.16;
+	final double runs = 954.5;
+	final double hrs = 283;
+	final double rbis = 919;
+	final double sbs = 124.9;
+	final double avg = 0.265;
+	final double ks = 1190.8;
+	final double ws = 68;
+	final double svs = 55.9;
+	final double era = 3.479;
+	final double whip = 1.125;
 	public double teamavg;
 	public double teamruns;
 	public double teamrbis;
@@ -200,9 +200,6 @@ class cmpTotal implements Comparator<player> {
 		return 0;
 	}
 }
-/*
- * 1465 456 1444 173 0.269 2155 124 136 3.66 1.16
- */
 
 public class Ranking {
 	public static void main(String args[]) throws Exception {
@@ -223,12 +220,14 @@ public class Ranking {
 			team exTeam = new team();
 			System.out.println("Input a player rank to draft them: (type 0 to stop)");
 			while (line != 0) {
+				System.out.println("Pick number " + pickNo + ": ");
+				if (counter % (teamNum + 1) == draftPos) 
+					System.out.println("It's you! Duh nu nu, duh nu nu");
 				line = scan.nextInt();
 				if (line == 0) {
 					return;
 				}
-				System.out.println("Pick number " + pickNo + ": ");
-				if (counter % teamNum == draftPos) {
+				if (counter % (teamNum + 1) == draftPos) {
 					System.out.println("It's you! Duh nu nu, duh nu nu");
 					arr = draft(line - 1, arr, myTeam);
 					myTeam.print();
@@ -252,18 +251,21 @@ public class Ranking {
 	}
 
 	public static lists draft(int n, lists arr, team teamName) {
-		String name = arr.players.get(n).name;
+		String id = arr.players.get(n).id;
+		boolean added = false;
 		for (batter a : arr.batters) {
-			if (a.name.equals(name)) {
+			if (a.id.equals(id)) {
 				arr.batters.remove(a);
 				teamName.addBatter(a, arr.players.get(n));
+				added = true;
 				break;
 			}
 		}
 		for (pitcher a : arr.pitchers) {
-			if (a.name.equals(name)) {
+			if (a.id.equals(id)) {
 				arr.pitchers.remove(a);
-				teamName.addPitcher(a, arr.players.get(n));
+				if (!added)
+					teamName.addPitcher(a, arr.players.get(n));
 				break;
 			}
 		}
@@ -272,16 +274,16 @@ public class Ranking {
 	}
 
 	public static lists draftNoTeam(int n, lists arr) {
-		String name = arr.players.get(n).name;
-		for (batter a : arr.batters) {
-			if (a.name.equals(name)) {
-				arr.batters.remove(a);
+		String id = arr.players.get(n).id;
 
+		for (batter a : arr.batters) {
+			if (a.id.equals(id)) {
+				arr.batters.remove(a);
 				break;
 			}
 		}
 		for (pitcher a : arr.pitchers) {
-			if (a.name.equals(name)) {
+			if (a.id.equals(id)) {
 				arr.pitchers.remove(a);
 
 				break;
@@ -342,10 +344,17 @@ public class Ranking {
 			double svSD = svsSD(info2, joe.svs);
 			double eraSD = eraSD(info2, joe.era);
 			double whipSD = whipSD(info2, joe.whip);
-			for (pitcher i : info2) {
-				temp3 = new pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD, (i.svs - joe.svs) / svSD,
+			a: for (pitcher i : info2) {
+				temp3 = new pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
+						(i.svs - joe.svs) / svSD,
 						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD);
 				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id);
+				for (player a : stats) {
+					if (a.id.equals(temp2.id)) {
+						a.total += temp2.total;
+						continue a;
+					}
+				}
 				stats.add(temp2);
 			}
 
@@ -394,11 +403,18 @@ public class Ranking {
 		double svSD = svsSD(info2, joe.svs);
 		double eraSD = eraSD(info2, joe.era);
 		double whipSD = whipSD(info2, joe.whip);
-		for (pitcher i : info2) {
-			temp3 = new pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD, myTeam.wNeed * (i.ws - joe.ws) / wSD,
+		a: for (pitcher i : info2) {
+			temp3 = new pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
+					myTeam.wNeed * (i.ws - joe.ws) / wSD,
 					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
 					myTeam.whipNeed * (joe.whip - i.whip) / whipSD);
 			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, i.name);
+			for (player a : stats) {
+				if (a.id.equals(temp2.id)) {
+					a.total += temp2.total;
+					continue a;
+				}
+			}
 			stats.add(temp2);
 		}
 
