@@ -290,17 +290,17 @@ public class Ranking {
 		// System.out.println(batters.getAbsolutePath());
 		Scanner scan = new Scanner(System.in);
 		try {
-			Scanner fileScan = new Scanner(new File("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\batters.txt"));
+			Scanner fileScan = new Scanner(new File("batters2.txt"));
 			String[] batterInfo;
 			// int counter = 0;
 			ArrayList<batter> info = new ArrayList<batter>();
 			while (fileScan.hasNextLine()) {
-				batterInfo = fileScan.nextLine().split("\\s+");
+				batterInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info.add(new batter(batterInfo[0] + " " + batterInfo[1], Integer.parseInt(batterInfo[3]),
-						Integer.parseInt(batterInfo[4]), Integer.parseInt(batterInfo[5]),
-						Integer.parseInt(batterInfo[6]), Double.parseDouble(batterInfo[7])));
+				info.add(new batter(batterInfo[3], Double.parseDouble(batterInfo[4]),
+						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
+						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8])));
 			}
 			batter gary = comp(info);
 			double runSD = runsSD(info, gary.runs);
@@ -308,7 +308,6 @@ public class Ranking {
 			double hrSD = hrsSD(info, gary.hrs);
 			double sbSD = sbsSD(info, gary.sbs);
 			double avgSD = avgSD(info, gary.avg);
-			FileWriter outfile = new FileWriter("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\playerStats.txt");
 			ArrayList<player> stats = new ArrayList<player>();
 			batter temp;
 			player temp2;
@@ -320,17 +319,17 @@ public class Ranking {
 			}
 
 			// Pitchers next
-			fileScan = new Scanner(new File("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\pitchers.txt"));
+			fileScan = new Scanner(new File("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\pitchers2.txt"));
 			String[] pitcherInfo;
 			// int counter = 0;
 			ArrayList<pitcher> info2 = new ArrayList<pitcher>();
 			while (fileScan.hasNextLine()) {
-				pitcherInfo = fileScan.nextLine().split("\\s+");
+				pitcherInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info2.add(new pitcher(pitcherInfo[0] + " " + pitcherInfo[1], Integer.parseInt(pitcherInfo[5]),
-						Integer.parseInt(pitcherInfo[6]), Integer.parseInt(pitcherInfo[7]),
-						Double.parseDouble(pitcherInfo[8]), Double.parseDouble(pitcherInfo[9])));
+				info2.add(new pitcher(pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
+						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
+						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8])));
 			}
 			pitcher joe = comp2(info2);
 			pitcher temp3;
@@ -349,11 +348,9 @@ public class Ranking {
 			Collections.sort(stats, new cmpTotal());
 			int counter = 1;
 			for (player i : stats) {
-				// outfile.write(counter + ". " + i.name + " " + i.total+ "\n");
 				System.out.println(counter + ". " + i.name + " " + i.total);
 				counter++;
 			}
-			outfile.close();
 			lists list = new lists(info, info2, stats);
 			return list;
 		} catch (FileNotFoundException e) {
@@ -367,61 +364,53 @@ public class Ranking {
 		// File batters = new File("");
 		// System.out.println(batters.getAbsolutePath());
 		// Scanner scan = new Scanner(System.in);
-		try {
 
-			batter gary = comp(info);
-			double runSD = runsSD(info, gary.runs);
-			double rbiSD = rbisSD(info, gary.rbis);
-			double hrSD = hrsSD(info, gary.hrs);
-			double sbSD = sbsSD(info, gary.sbs);
-			double avgSD = avgSD(info, gary.avg);
-			FileWriter outfile = new FileWriter("C:\\Users\\aseis\\eclipse-workspace\\Fantasy\\src\\playerStats.txt");
-			ArrayList<player> stats = new ArrayList<player>();
-			batter temp;
-			player temp2;
-			for (batter i : info) {
-				temp = new batter(i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
-						myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
-						myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD);
-				temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg);
-				stats.add(temp2);
-			}
-
-			// Pitchers next
-
-			pitcher joe = comp2(info2);
-			pitcher temp3;
-			double kSD = ksSD(info2, joe.ks);
-			double wSD = wsSD(info2, joe.ws);
-			double svSD = svsSD(info2, joe.svs);
-			double eraSD = eraSD(info2, joe.era);
-			double whipSD = whipSD(info2, joe.whip);
-			for (pitcher i : info2) {
-				temp3 = new pitcher(i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD, myTeam.wNeed * (i.ws - joe.ws) / wSD,
-						myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
-						myTeam.whipNeed * (joe.whip - i.whip) / whipSD);
-				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip);
-				stats.add(temp2);
-			}
-
-			Collections.sort(stats, new cmpTotal());
-			int counter = 1;
-			for (player i : stats) {
-				// outfile.write(counter + ". " + i.name + " " + i.total+ "\n");
-				System.out.println(counter + ". " + i.name + " " + i.total);
-				counter++;
-				if (counter > 10) {
-					break;
-				}
-			}
-			outfile.close();
-			lists list = new lists(info, info2, stats);
-
-			return list;
-		} catch (FileNotFoundException e) {
-			System.out.println("Bad file");
-			return null;
+		batter gary = comp(info);
+		double runSD = runsSD(info, gary.runs);
+		double rbiSD = rbisSD(info, gary.rbis);
+		double hrSD = hrsSD(info, gary.hrs);
+		double sbSD = sbsSD(info, gary.sbs);
+		double avgSD = avgSD(info, gary.avg);
+		ArrayList<player> stats = new ArrayList<player>();
+		batter temp;
+		player temp2;
+		for (batter i : info) {
+			temp = new batter(i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
+					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
+					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD);
+			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg);
+			stats.add(temp2);
 		}
+
+		// Pitchers next
+
+		pitcher joe = comp2(info2);
+		pitcher temp3;
+		double kSD = ksSD(info2, joe.ks);
+		double wSD = wsSD(info2, joe.ws);
+		double svSD = svsSD(info2, joe.svs);
+		double eraSD = eraSD(info2, joe.era);
+		double whipSD = whipSD(info2, joe.whip);
+		for (pitcher i : info2) {
+			temp3 = new pitcher(i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD, myTeam.wNeed * (i.ws - joe.ws) / wSD,
+					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
+					myTeam.whipNeed * (joe.whip - i.whip) / whipSD);
+			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip);
+			stats.add(temp2);
+		}
+
+		Collections.sort(stats, new cmpTotal());
+		int counter = 1;
+		for (player i : stats) {
+			System.out.println(counter + ". " + i.name + " " + i.total);
+			counter++;
+			if (counter > 10) {
+				break;
+			}
+		}
+		lists list = new lists(info, info2, stats);
+
+		return list;
 
 	}
 
