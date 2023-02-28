@@ -11,6 +11,6 @@ public class player {
         total = _total;
         id = _id;
         positions = _positions;
-        bestPositionValue = 0;
+        bestPositionValue = -10;
     }
 }

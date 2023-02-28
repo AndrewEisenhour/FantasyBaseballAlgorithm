@@ -72,10 +72,9 @@ public class Ranking {
 	public static lists draft(int n, lists arr, team teamName) {
 		String id = arr.players.get(n).id;
 		boolean added = false;
-		boolean name = false;
 		for (batter a : arr.batters) {
 			if (a.id.equals(id)) {
-				name = arr.batters.remove(a);
+				arr.batters.remove(a);
 				teamName.addBatter(a, arr.players.get(n));
 				added = true;
 				break;
@@ -83,34 +82,33 @@ public class Ranking {
 		}
 		for (pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
-				name = arr.pitchers.remove(a);
+				arr.pitchers.remove(a);
 				if (!added)
 					teamName.addPitcher(a, arr.players.get(n));
 				break;
 			}
 		}
 		player temp = arr.players.remove(n);
-		System.out.println("Drafted: " + temp.name + " " + name + " " + temp.id);
+		System.out.println("Drafted: " + temp.name + " ");
 		return arr;
 	}
 
 	public static lists draftNoTeam(int n, lists arr) {
 		String id = arr.players.get(n).id;
-		boolean name = false;
 		for (batter a : arr.batters) {
 			if (a.id.equals(id)) {
-				name = arr.batters.remove(a);
+				arr.batters.remove(a);
 				break;
 			}
 		}
 		for (pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
-				name = arr.pitchers.remove(a);
+				arr.pitchers.remove(a);
 				break;
 			}
 		}
 		player temp = arr.players.remove(n);
-		System.out.println("Drafted: " + temp.name + " " + name + " " + temp.id);
+		System.out.println("Drafted: " + temp.name);
 		return arr;
 	}
 
@@ -125,7 +123,7 @@ public class Ranking {
 				batterInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info.add(new batter(batterInfo[0], batterInfo[3], Double.parseDouble(batterInfo[4]),
+				info.add(new batter(batterInfo[1], batterInfo[3], Double.parseDouble(batterInfo[4]),
 						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
 						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8]),
 						Arrays.stream(batterInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
@@ -158,7 +156,7 @@ public class Ranking {
 				pitcherInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info2.add(new pitcher(pitcherInfo[0], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
+				info2.add(new pitcher(pitcherInfo[1], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
 						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8]),
 						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
@@ -196,7 +194,7 @@ public class Ranking {
 			Collections.sort(stats, new cmpTotal());
 			int counter = 1;
 			for (player i : stats) {
-				System.out.println(counter + ". " + i.name + " " + i.total + " " + i.id);
+				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
 				counter++;
 			}
 			lists list = new lists(info, info2, stats);
@@ -268,7 +266,7 @@ public class Ranking {
 		Collections.sort(stats, new cmpTotal());
 		int counter = 1;
 		for (player i : stats) {
-			System.out.println(counter + ". " + i.name + " " + i.total);
+			System.out.println(i.id + ". " + i.name + " " + i.total);
 			counter++;
 			if (counter > 10) {
 				break;
