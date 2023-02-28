@@ -22,6 +22,7 @@ for player in espn_players:
             else:
                 player_line += ":0"
         batterOutfile.write(player_line + '\n')
+        #print(player_line)
     if '34' in player_data:
         for stat in pitcher_categories:
             if stat in player_data:
@@ -29,6 +30,7 @@ for player in espn_players:
             else:
                 player_line += ":0"
         pitcherOutfile.write(player_line + '\n')
+        #print(player_line)
     '''for category, stat in player['player']['stats'][0]['stats'].items():
         player_line += ":" + str(stat)
     print(player_line)'''

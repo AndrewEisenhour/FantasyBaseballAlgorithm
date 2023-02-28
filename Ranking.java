@@ -1,186 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-class batter {
-	public String id;
-	public String name;
-	public double avg;
-	public double runs;
-	public double rbis;
-	public double hrs;
-	public double sbs;
-	// public double total;
-
-	public batter(String _id, String _name, double d, double e, double f, double g, double _avg) {
-		name = _name;
-		runs = d;
-		rbis = e;
-		hrs = f;
-		sbs = g;
-		avg = _avg;
-		id = _id;
-	}
-}
-
-class pitcher {
-	public String name;
-	public double ks;
-	public double ws;
-	public double svs;
-	public double era;
-	public double whip;
-	public String id;
-	// public double total;
-
-	public pitcher(String _id, String _name, double d, double e, double f, double g, double _avg) {
-		name = _name;
-		ks = d;
-		ws = e;
-		svs = f;
-		era = g;
-		whip = _avg;
-		id = _id;
-	}
-}
-
-class lists {
-	ArrayList<batter> batters;
-	ArrayList<pitcher> pitchers;
-	ArrayList<player> players;
-
-	public lists(ArrayList<batter> _batters, ArrayList<pitcher> _pitchers, ArrayList<player> _players) {
-		batters = _batters;
-		pitchers = _pitchers;
-		players = _players;
-	}
-}
-
-class team {
-	ArrayList<batter> batters;
-	ArrayList<pitcher> pitchers;
-	ArrayList<player> players;
-	double runNeed;
-	double hrNeed;
-	double rbiNeed;
-	double sbNeed;
-	double avgNeed;
-	double kNeed;
-	double wNeed;
-	double svNeed;
-	double eraNeed;
-	double whipNeed;
-	final double runs = 954.5;
-	final double hrs = 283;
-	final double rbis = 919;
-	final double sbs = 124.9;
-	final double avg = 0.265;
-	final double ks = 1190.8;
-	final double ws = 68;
-	final double svs = 55.9;
-	final double era = 3.479;
-	final double whip = 1.125;
-	public double teamavg;
-	public double teamruns;
-	public double teamrbis;
-	public double teamhrs;
-	public double teamsbs;
-	public double teamks;
-	public double teamws;
-	public double teamsvs;
-	public double teamera;
-	public double teamwhip;
-
-	public team() {
-		batters = new ArrayList<batter>();
-		pitchers = new ArrayList<pitcher>();
-		players = new ArrayList<player>();
-		runNeed = 1.0;
-		hrNeed = 1.0;
-		rbiNeed = 1.0;
-		sbNeed = 1.0;
-		avgNeed = 1.0;
-		kNeed = 1.0;
-		wNeed = 1.0;
-		svNeed = 1.0;
-		eraNeed = 1.0;
-		whipNeed = 1.0;
-	}
-
-	public team(ArrayList<batter> _batters, ArrayList<pitcher> _pitchers, ArrayList<player> _players) {
-		batters = _batters;
-		pitchers = _pitchers;
-		players = _players;
-		runNeed = 1.0;
-		hrNeed = 1.0;
-		rbiNeed = 1.0;
-		sbNeed = 1.0;
-		avgNeed = 1.0;
-		kNeed = 1.0;
-		wNeed = 1.0;
-		svNeed = 1.0;
-		eraNeed = 1.0;
-		whipNeed = 1.0;
-	}
-
-	public void batterCalculate() {
-		batter a = batters.get(batters.size() - 1);
-		teamruns += a.runs;
-		runNeed -= teamruns / runs;
-		teamhrs += a.hrs;
-		hrNeed -= teamhrs / hrs;
-		teamrbis += a.rbis;
-		rbiNeed -= teamrbis / rbis;
-		teamsbs += a.sbs;
-		sbNeed -= teamsbs / sbs;
-		teamavg = (teamavg * batters.size() + a.avg) / batters.size();
-		avgNeed = avg / teamavg;
-	}
-
-	public void pitcherCalculate() {
-		pitcher a = pitchers.get(pitchers.size() - 1);
-		teamks += a.ks;
-		kNeed -= teamks / ks;
-		teamws += a.ws;
-		wNeed -= teamws / ws;
-		teamsvs += a.svs;
-		svNeed -= teamsvs / svs;
-		teamera = (teamera * pitchers.size() + a.era) / pitchers.size();
-		eraNeed = teamera / era;
-		teamwhip = (teamwhip * pitchers.size() + a.whip) / pitchers.size();
-		whipNeed = teamwhip / whip;
-	}
-
-	public void addPitcher(pitcher a, player b) {
-		pitchers.add(a);
-		players.add(b);
-		pitcherCalculate();
-	}
-
-	public void addBatter(batter a, player b) {
-		batters.add(a);
-		players.add(b);
-		batterCalculate();
-	}
-
-	public void print() {
-		for (player i : players) {
-			System.out.println(i.name);
-		}
-	}
-}
-
-class player {
-	public double total;
-	public String name;
-	public String id;
-
-	public player(String _name, double _total, String _id) {
-		name = _name;
-		total = _total;
-		id = _id;
-	}
-}
-
 class cmpAvg implements Comparator<batter> {
 	public int compare(batter E1, batter E2) {
 		if (E1.avg < E2.avg)
@@ -221,7 +41,7 @@ public class Ranking {
 			System.out.println("Input a player rank to draft them: (type 0 to stop)");
 			while (line != 0) {
 				System.out.println("Pick number " + pickNo + ": ");
-				if (counter % (teamNum + 1) == draftPos) 
+				if (counter % (teamNum + 1) == draftPos)
 					System.out.println("It's you! Duh nu nu, duh nu nu");
 				line = scan.nextInt();
 				if (line == 0) {
@@ -232,7 +52,6 @@ public class Ranking {
 					arr = draft(line - 1, arr, myTeam);
 					myTeam.print();
 					arr = run2(arr.batters, arr.pitchers, myTeam);
-
 				} else {
 					arr = draftNoTeam(line - 1, arr);
 					arr = run2(arr.batters, arr.pitchers, exTeam);
@@ -253,9 +72,10 @@ public class Ranking {
 	public static lists draft(int n, lists arr, team teamName) {
 		String id = arr.players.get(n).id;
 		boolean added = false;
+		boolean name = false;
 		for (batter a : arr.batters) {
 			if (a.id.equals(id)) {
-				arr.batters.remove(a);
+				name = arr.batters.remove(a);
 				teamName.addBatter(a, arr.players.get(n));
 				added = true;
 				break;
@@ -263,33 +83,34 @@ public class Ranking {
 		}
 		for (pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
-				arr.pitchers.remove(a);
+				name = arr.pitchers.remove(a);
 				if (!added)
 					teamName.addPitcher(a, arr.players.get(n));
 				break;
 			}
 		}
-		arr.players.remove(n);
+		player temp = arr.players.remove(n);
+		System.out.println("Drafted: " + temp.name + " " + name + " " + temp.id);
 		return arr;
 	}
 
 	public static lists draftNoTeam(int n, lists arr) {
 		String id = arr.players.get(n).id;
-
+		boolean name = false;
 		for (batter a : arr.batters) {
 			if (a.id.equals(id)) {
-				arr.batters.remove(a);
+				name = arr.batters.remove(a);
 				break;
 			}
 		}
 		for (pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
-				arr.pitchers.remove(a);
-
+				name = arr.pitchers.remove(a);
 				break;
 			}
 		}
-		arr.players.remove(n);
+		player temp = arr.players.remove(n);
+		System.out.println("Drafted: " + temp.name + " " + name + " " + temp.id);
 		return arr;
 	}
 
@@ -306,7 +127,8 @@ public class Ranking {
 				// counter++;
 				info.add(new batter(batterInfo[0], batterInfo[3], Double.parseDouble(batterInfo[4]),
 						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
-						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8])));
+						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8]),
+						Arrays.stream(batterInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
 			}
 			batter gary = comp(info);
 			double runSD = runsSD(info, gary.runs);
@@ -317,10 +139,13 @@ public class Ranking {
 			ArrayList<player> stats = new ArrayList<player>();
 			batter temp;
 			player temp2;
+			double value;
 			for (batter i : info) {
 				temp = new batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
-						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD);
-				temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id);
+						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD,
+						i.positions);
+				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
+				temp2 = new player(temp.name, value, temp.id, temp.positions);
 				stats.add(temp2);
 			}
 
@@ -335,7 +160,8 @@ public class Ranking {
 				// counter++;
 				info2.add(new pitcher(pitcherInfo[0], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
-						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8])));
+						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8]),
+						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
 			}
 			pitcher joe = comp2(info2);
 			pitcher temp3;
@@ -347,8 +173,9 @@ public class Ranking {
 			a: for (pitcher i : info2) {
 				temp3 = new pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
 						(i.svs - joe.svs) / svSD,
-						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD);
-				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id);
+						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD, i.positions);
+				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
+						temp3.positions);
 				for (player a : stats) {
 					if (a.id.equals(temp2.id)) {
 						a.total += temp2.total;
@@ -358,10 +185,18 @@ public class Ranking {
 				stats.add(temp2);
 			}
 
+			double[][] positionalValue = positionAvg(stats);
+			for (player i : stats) {
+				for (int position : i.positions) {
+					i.bestPositionValue = Math.max(i.bestPositionValue,
+							(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+				}
+				i.total += i.bestPositionValue;
+			}
 			Collections.sort(stats, new cmpTotal());
 			int counter = 1;
 			for (player i : stats) {
-				System.out.println(counter + ". " + i.name + " " + i.total);
+				System.out.println(counter + ". " + i.name + " " + i.total + " " + i.id);
 				counter++;
 			}
 			lists list = new lists(info, info2, stats);
@@ -389,8 +224,10 @@ public class Ranking {
 		for (batter i : info) {
 			temp = new batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
 					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
-					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD);
-			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id);
+					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD,
+					i.positions);
+			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id,
+					temp.positions);
 			stats.add(temp2);
 		}
 
@@ -407,8 +244,9 @@ public class Ranking {
 			temp3 = new pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
 					myTeam.wNeed * (i.ws - joe.ws) / wSD,
 					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
-					myTeam.whipNeed * (joe.whip - i.whip) / whipSD);
-			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, i.name);
+					myTeam.whipNeed * (joe.whip - i.whip) / whipSD, i.positions);
+			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
+					temp3.positions);
 			for (player a : stats) {
 				if (a.id.equals(temp2.id)) {
 					a.total += temp2.total;
@@ -416,6 +254,15 @@ public class Ranking {
 				}
 			}
 			stats.add(temp2);
+		}
+
+		double[][] positionalValue = positionAvg(stats);
+		for (player i : stats) {
+			for (int position : i.positions) {
+				i.bestPositionValue = Math.max(i.bestPositionValue,
+						(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+			}
+			i.total += i.bestPositionValue;
 		}
 
 		Collections.sort(stats, new cmpTotal());
@@ -434,12 +281,14 @@ public class Ranking {
 	}
 
 	private static batter comp(ArrayList<batter> info) {
-		batter generic = new batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info));
+		batter generic = new batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
+				new int[] { 0 });
 		return generic;
 	}
 
 	private static pitcher comp2(ArrayList<pitcher> info) {
-		pitcher generic = new pitcher("0", "Vanilla Joe", ks(info), ws(info), svs(info), era(info), whip(info));
+		pitcher generic = new pitcher("0", "Vanilla Joe", ks(info), ws(info), svs(info), era(info), whip(info),
+				new int[] { 0 });
 		return generic;
 	}
 
@@ -631,5 +480,34 @@ public class Ranking {
 			total += i.whip;
 		}
 		return total / n;
+	}
+
+	private static double[][] positionAvg(ArrayList<player> info) {
+		double[] ns = new double[20];
+		double[] totals = new double[20];
+		double[] totalSquare = new double[20];
+		for (player i : info) {
+			for (int p : i.positions) {
+				ns[p]++;
+				totals[p] += i.total;
+			}
+		}
+		double[][] finals = new double[20][2];
+		for (int i = 0; i < ns.length; i++) {
+			if (ns[i] > 0) {
+				finals[i][0] = totals[i] / ns[i];
+			}
+		}
+		for (player i : info) {
+			for (int p : i.positions) {
+				totalSquare[p] += Math.pow(i.total - totals[p], 2);
+			}
+		}
+		for (int i = 0; i < ns.length; i++) {
+			if (ns[i] > 0) {
+				finals[i][1] = Math.sqrt(totalSquare[i] / ns[i]);
+			}
+		}
+		return finals;
 	}
 }

@@ -24,5 +24,3 @@ with open('ESPNData.json', 'w') as outfile:
     
 espn_players = rawPlayerData['players']
 player_details = espn_players[0]
-
-print(player_details)
