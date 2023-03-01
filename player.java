@@ -1,12 +1,11 @@
-
-public class player {
+public class Player {
     public double total;
     public String name;
     public String id;
     public int[] positions;
     public double bestPositionValue;
 
-    public player(String _name, double _total, String _id, int[] _positions) {
+    public Player(String _name, double _total, String _id, int[] _positions) {
         name = _name;
         total = _total;
         id = _id;

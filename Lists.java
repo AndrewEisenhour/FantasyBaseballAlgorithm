@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class lists {
-    ArrayList<batter> batters;
-    ArrayList<pitcher> pitchers;
-    ArrayList<player> players;
+public class Lists {
+    ArrayList<Batter> batters;
+    ArrayList<Pitcher> pitchers;
+    ArrayList<Player> players;
 
-    public lists(ArrayList<batter> _batters, ArrayList<pitcher> _pitchers, ArrayList<player> _players) {
+    public Lists(ArrayList<Batter> _batters, ArrayList<Pitcher> _pitchers, ArrayList<Player> _players) {
         batters = _batters;
         pitchers = _pitchers;
         players = _players;

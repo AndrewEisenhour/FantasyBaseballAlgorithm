@@ -1,4 +1,4 @@
-public class pitcher {
+public class Pitcher {
     public String name;
     public double ks;
     public double ws;
@@ -9,7 +9,7 @@ public class pitcher {
     public int[] positions;
     // public double total;
 
-    public pitcher(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
+    public Pitcher(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
         name = _name;
         ks = d;
         ws = e;

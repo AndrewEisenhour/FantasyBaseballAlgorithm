@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class team {
-    ArrayList<batter> batters;
-    ArrayList<pitcher> pitchers;
-    ArrayList<player> players;
+public class Team {
+    ArrayList<Batter> batters;
+    ArrayList<Pitcher> pitchers;
+    ArrayList<Player> players;
     double runNeed;
     double hrNeed;
     double rbiNeed;
@@ -35,10 +35,10 @@ public class team {
     public double teamera;
     public double teamwhip;
 
-    public team() {
-        batters = new ArrayList<batter>();
-        pitchers = new ArrayList<pitcher>();
-        players = new ArrayList<player>();
+    public Team() {
+        batters = new ArrayList<Batter>();
+        pitchers = new ArrayList<Pitcher>();
+        players = new ArrayList<Player>();
         runNeed = 1.0;
         hrNeed = 1.0;
         rbiNeed = 1.0;
@@ -51,7 +51,7 @@ public class team {
         whipNeed = 1.0;
     }
 
-    public team(ArrayList<batter> _batters, ArrayList<pitcher> _pitchers, ArrayList<player> _players) {
+    public Team(ArrayList<Batter> _batters, ArrayList<Pitcher> _pitchers, ArrayList<Player> _players) {
         batters = _batters;
         pitchers = _pitchers;
         players = _players;
@@ -68,7 +68,7 @@ public class team {
     }
 
     public void batterCalculate() {
-        batter a = batters.get(batters.size() - 1);
+        Batter a = batters.get(batters.size() - 1);
         teamruns += a.runs;
         runNeed -= teamruns / runs;
         teamhrs += a.hrs;
@@ -82,7 +82,7 @@ public class team {
     }
 
     public void pitcherCalculate() {
-        pitcher a = pitchers.get(pitchers.size() - 1);
+        Pitcher a = pitchers.get(pitchers.size() - 1);
         teamks += a.ks;
         kNeed -= teamks / ks;
         teamws += a.ws;
@@ -95,20 +95,20 @@ public class team {
         whipNeed = teamwhip / whip;
     }
 
-    public void addPitcher(pitcher a, player b) {
+    public void addPitcher(Pitcher a, Player b) {
         pitchers.add(a);
         players.add(b);
         pitcherCalculate();
     }
 
-    public void addBatter(batter a, player b) {
+    public void addBatter(Batter a, Player b) {
         batters.add(a);
         players.add(b);
         batterCalculate();
     }
 
     public void print() {
-        for (player i : players) {
+        for (Player i : players) {
             System.out.println(i.name);
         }
     }

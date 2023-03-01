@@ -1,8 +1,8 @@
 import java.util.*;
 import java.io.*;
 
-class cmpAvg implements Comparator<batter> {
-	public int compare(batter E1, batter E2) {
+class cmpAvg implements Comparator<Batter> {
+	public int compare(Batter E1, Batter E2) {
 		if (E1.avg < E2.avg)
 			return 1;
 		if (E1.avg > E2.avg)
@@ -11,8 +11,8 @@ class cmpAvg implements Comparator<batter> {
 	}
 }
 
-class cmpTotal implements Comparator<player> {
-	public int compare(player E1, player E2) {
+class cmpTotal implements Comparator<Player> {
+	public int compare(Player E1, Player E2) {
 		if (E1.total < E2.total)
 			return 1;
 		if (E1.total > E2.total)
@@ -23,7 +23,7 @@ class cmpTotal implements Comparator<player> {
 
 public class Ranking {
 	public static void main(String args[]) throws Exception {
-		lists arr = run();
+		Lists arr = run();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Would you like to begin a draft? (y/n)\n");
 		int line = -1;
@@ -36,8 +36,8 @@ public class Ranking {
 			teamNum = scan.nextInt();
 			System.out.println("What draft position would you like?");
 			draftPos = scan.nextInt();
-			team myTeam = new team();
-			team exTeam = new team();
+			Team myTeam = new Team();
+			Team exTeam = new Team();
 			System.out.println("Input a player rank to draft them: (type 0 to stop)");
 			while (line != 0) {
 				System.out.println("Pick number " + pickNo + ": ");
@@ -69,10 +69,10 @@ public class Ranking {
 		scan.close();
 	}
 
-	public static lists draft(int n, lists arr, team teamName) {
+	public static Lists draft(int n, Lists arr, Team teamName) {
 		String id = arr.players.get(n).id;
 		boolean added = false;
-		for (batter a : arr.batters) {
+		for (Batter a : arr.batters) {
 			if (a.id.equals(id)) {
 				arr.batters.remove(a);
 				teamName.addBatter(a, arr.players.get(n));
@@ -80,7 +80,7 @@ public class Ranking {
 				break;
 			}
 		}
-		for (pitcher a : arr.pitchers) {
+		for (Pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
 				arr.pitchers.remove(a);
 				if (!added)
@@ -88,62 +88,62 @@ public class Ranking {
 				break;
 			}
 		}
-		player temp = arr.players.remove(n);
+		Player temp = arr.players.remove(n);
 		System.out.println("Drafted: " + temp.name + " ");
 		return arr;
 	}
 
-	public static lists draftNoTeam(int n, lists arr) {
+	public static Lists draftNoTeam(int n, Lists arr) {
 		String id = arr.players.get(n).id;
-		for (batter a : arr.batters) {
+		for (Batter a : arr.batters) {
 			if (a.id.equals(id)) {
 				arr.batters.remove(a);
 				break;
 			}
 		}
-		for (pitcher a : arr.pitchers) {
+		for (Pitcher a : arr.pitchers) {
 			if (a.id.equals(id)) {
 				arr.pitchers.remove(a);
 				break;
 			}
 		}
-		player temp = arr.players.remove(n);
+		Player temp = arr.players.remove(n);
 		System.out.println("Drafted: " + temp.name);
 		return arr;
 	}
 
-	public static lists run() throws Exception {
+	public static Lists run() throws Exception {
 		Scanner scan = new Scanner(System.in);
 		try {
 			Scanner fileScan = new Scanner(new File("batters2.txt"));
 			String[] batterInfo;
 			// int counter = 0;
-			ArrayList<batter> info = new ArrayList<batter>();
+			ArrayList<Batter> info = new ArrayList<Batter>();
 			while (fileScan.hasNextLine()) {
 				batterInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info.add(new batter(batterInfo[1], batterInfo[3], Double.parseDouble(batterInfo[4]),
+				info.add(new Batter(batterInfo[1], batterInfo[3], Double.parseDouble(batterInfo[4]),
 						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
 						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8]),
 						Arrays.stream(batterInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
 			}
-			batter gary = comp(info);
+			Batter gary = comp(info);
 			double runSD = runsSD(info, gary.runs);
 			double rbiSD = rbisSD(info, gary.rbis);
 			double hrSD = hrsSD(info, gary.hrs);
 			double sbSD = sbsSD(info, gary.sbs);
 			double avgSD = avgSD(info, gary.avg);
-			ArrayList<player> stats = new ArrayList<player>();
-			batter temp;
-			player temp2;
+			ArrayList<Player> stats = new ArrayList<Player>();
+			Batter temp;
+			Player temp2;
 			double value;
-			for (batter i : info) {
-				temp = new batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
+			for (Batter i : info) {
+				temp = new Batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
 						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD,
 						i.positions);
 				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
-				temp2 = new player(temp.name, value, temp.id, temp.positions);
+				temp2 = new Player(temp.name, value, temp.id, temp.positions);
 				stats.add(temp2);
 			}
 
@@ -151,30 +151,30 @@ public class Ranking {
 			fileScan = new Scanner(new File("pitchers2.txt"));
 			String[] pitcherInfo;
 			// int counter = 0;
-			ArrayList<pitcher> info2 = new ArrayList<pitcher>();
+			ArrayList<Pitcher> info2 = new ArrayList<Pitcher>();
 			while (fileScan.hasNextLine()) {
 				pitcherInfo = fileScan.nextLine().split(":");
 				// System.out.println(counter);
 				// counter++;
-				info2.add(new pitcher(pitcherInfo[1], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
+				info2.add(new Pitcher(pitcherInfo[1], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
 						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8]),
 						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
 			}
-			pitcher joe = comp2(info2);
-			pitcher temp3;
+			Pitcher joe = comp2(info2);
+			Pitcher temp3;
 			double kSD = ksSD(info2, joe.ks);
 			double wSD = wsSD(info2, joe.ws);
 			double svSD = svsSD(info2, joe.svs);
 			double eraSD = eraSD(info2, joe.era);
 			double whipSD = whipSD(info2, joe.whip);
-			a: for (pitcher i : info2) {
-				temp3 = new pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
+			a: for (Pitcher i : info2) {
+				temp3 = new Pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
 						(i.svs - joe.svs) / svSD,
 						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD, i.positions);
-				temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
+				temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 						temp3.positions);
-				for (player a : stats) {
+				for (Player a : stats) {
 					if (a.id.equals(temp2.id)) {
 						a.total += temp2.total;
 						continue a;
@@ -184,7 +184,7 @@ public class Ranking {
 			}
 
 			double[][] positionalValue = positionAvg(stats);
-			for (player i : stats) {
+			for (Player i : stats) {
 				for (int position : i.positions) {
 					i.bestPositionValue = Math.max(i.bestPositionValue,
 							(i.total - positionalValue[position][0]) / positionalValue[position][1]);
@@ -192,12 +192,10 @@ public class Ranking {
 				i.total += i.bestPositionValue;
 			}
 			Collections.sort(stats, new cmpTotal());
-			int counter = 1;
-			for (player i : stats) {
+			for (Player i : stats) {
 				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
-				counter++;
 			}
-			lists list = new lists(info, info2, stats);
+			Lists list = new Lists(info, info2, stats);
 			return list;
 		} catch (FileNotFoundException e) {
 			System.out.println("Bad file");
@@ -205,47 +203,47 @@ public class Ranking {
 		}
 	}
 
-	public static lists run2(ArrayList<batter> info, ArrayList<pitcher> info2, team myTeam) throws Exception {
+	public static Lists run2(ArrayList<Batter> info, ArrayList<Pitcher> info2, Team myTeam) throws Exception {
 		// File batters = new File("");
 		// System.out.println(batters.getAbsolutePath());
 		// Scanner scan = new Scanner(System.in);
 
-		batter gary = comp(info);
+		Batter gary = comp(info);
 		double runSD = runsSD(info, gary.runs);
 		double rbiSD = rbisSD(info, gary.rbis);
 		double hrSD = hrsSD(info, gary.hrs);
 		double sbSD = sbsSD(info, gary.sbs);
 		double avgSD = avgSD(info, gary.avg);
-		ArrayList<player> stats = new ArrayList<player>();
-		batter temp;
-		player temp2;
-		for (batter i : info) {
-			temp = new batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
+		ArrayList<Player> stats = new ArrayList<Player>();
+		Batter temp;
+		Player temp2;
+		for (Batter i : info) {
+			temp = new Batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
 					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
 					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD,
 					i.positions);
-			temp2 = new player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id,
+			temp2 = new Player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id,
 					temp.positions);
 			stats.add(temp2);
 		}
 
 		// Pitchers next
 
-		pitcher joe = comp2(info2);
-		pitcher temp3;
+		Pitcher joe = comp2(info2);
+		Pitcher temp3;
 		double kSD = ksSD(info2, joe.ks);
 		double wSD = wsSD(info2, joe.ws);
 		double svSD = svsSD(info2, joe.svs);
 		double eraSD = eraSD(info2, joe.era);
 		double whipSD = whipSD(info2, joe.whip);
-		a: for (pitcher i : info2) {
-			temp3 = new pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
+		a: for (Pitcher i : info2) {
+			temp3 = new Pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
 					myTeam.wNeed * (i.ws - joe.ws) / wSD,
 					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
 					myTeam.whipNeed * (joe.whip - i.whip) / whipSD, i.positions);
-			temp2 = new player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
+			temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 					temp3.positions);
-			for (player a : stats) {
+			for (Player a : stats) {
 				if (a.id.equals(temp2.id)) {
 					a.total += temp2.total;
 					continue a;
@@ -255,7 +253,7 @@ public class Ranking {
 		}
 
 		double[][] positionalValue = positionAvg(stats);
-		for (player i : stats) {
+		for (Player i : stats) {
 			for (int position : i.positions) {
 				i.bestPositionValue = Math.max(i.bestPositionValue,
 						(i.total - positionalValue[position][0]) / positionalValue[position][1]);
@@ -265,226 +263,226 @@ public class Ranking {
 
 		Collections.sort(stats, new cmpTotal());
 		int counter = 1;
-		for (player i : stats) {
+		for (Player i : stats) {
 			System.out.println(i.id + ". " + i.name + " " + i.total);
 			counter++;
 			if (counter > 10) {
 				break;
 			}
 		}
-		lists list = new lists(info, info2, stats);
+		Lists list = new Lists(info, info2, stats);
 
 		return list;
 
 	}
 
-	private static batter comp(ArrayList<batter> info) {
-		batter generic = new batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
+	private static Batter comp(ArrayList<Batter> info) {
+		Batter generic = new Batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
 				new int[] { 0 });
 		return generic;
 	}
 
-	private static pitcher comp2(ArrayList<pitcher> info) {
-		pitcher generic = new pitcher("0", "Vanilla Joe", ks(info), ws(info), svs(info), era(info), whip(info),
+	private static Pitcher comp2(ArrayList<Pitcher> info) {
+		Pitcher generic = new Pitcher("0", "Average Joe", ks(info), ws(info), svs(info), era(info), whip(info),
 				new int[] { 0 });
 		return generic;
 	}
 
-	private static double runsSD(ArrayList<batter> info, double comparison) {
+	private static double runsSD(ArrayList<Batter> info, double comparison) {
 		double sum = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			sum += Math.pow(i.runs - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double rbisSD(ArrayList<batter> info, double comparison) {
+	private static double rbisSD(ArrayList<Batter> info, double comparison) {
 		double sum = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			sum += Math.pow(i.rbis - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double hrsSD(ArrayList<batter> info, double comparison) {
+	private static double hrsSD(ArrayList<Batter> info, double comparison) {
 		double sum = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			sum += Math.pow(i.hrs - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double sbsSD(ArrayList<batter> info, double comparison) {
+	private static double sbsSD(ArrayList<Batter> info, double comparison) {
 		double sum = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			sum += Math.pow(i.sbs - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double avgSD(ArrayList<batter> info, double comparison) {
+	private static double avgSD(ArrayList<Batter> info, double comparison) {
 		double sum = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			sum += Math.pow(i.avg - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double runs(ArrayList<batter> info) {
+	private static double runs(ArrayList<Batter> info) {
 		double n = 0;
 		double total = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			n++;
 			total += i.runs;
 		}
 		return total / n;
 	}
 
-	private static double hrs(ArrayList<batter> info) {
+	private static double hrs(ArrayList<Batter> info) {
 		double n = 0;
 		double total = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			n++;
 			total += i.hrs;
 		}
 		return total / n;
 	}
 
-	private static double rbis(ArrayList<batter> info) {
+	private static double rbis(ArrayList<Batter> info) {
 		double n = 0;
 		double total = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			n++;
 			total += i.rbis;
 		}
 		return total / n;
 	}
 
-	private static double sbs(ArrayList<batter> info) {
+	private static double sbs(ArrayList<Batter> info) {
 		double n = 0;
 		double total = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			n++;
 			total += i.sbs;
 		}
 		return total / n;
 	}
 
-	private static double avg(ArrayList<batter> info) {
+	private static double avg(ArrayList<Batter> info) {
 		double n = 0;
 		double total = 0;
-		for (batter i : info) {
+		for (Batter i : info) {
 			n++;
 			total += i.avg;
 		}
 		return total / n;
 	}
 
-	private static double ksSD(ArrayList<pitcher> info, double comparison) {
+	private static double ksSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			sum += Math.pow(i.ks - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double wsSD(ArrayList<pitcher> info, double comparison) {
+	private static double wsSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			sum += Math.pow(i.ws - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double svsSD(ArrayList<pitcher> info, double comparison) {
+	private static double svsSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			sum += Math.pow(i.svs - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double eraSD(ArrayList<pitcher> info, double comparison) {
+	private static double eraSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			sum += Math.pow(i.era - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double whipSD(ArrayList<pitcher> info, double comparison) {
+	private static double whipSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			sum += Math.pow(i.whip - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
 	}
 
-	private static double ks(ArrayList<pitcher> info) {
+	private static double ks(ArrayList<Pitcher> info) {
 		double n = 0;
 		double total = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			n++;
 			total += i.ks;
 		}
 		return total / n;
 	}
 
-	private static double ws(ArrayList<pitcher> info) {
+	private static double ws(ArrayList<Pitcher> info) {
 		double n = 0;
 		double total = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			n++;
 			total += i.ws;
 		}
 		return total / n;
 	}
 
-	private static double svs(ArrayList<pitcher> info) {
+	private static double svs(ArrayList<Pitcher> info) {
 		double n = 0;
 		double total = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			n++;
 			total += i.svs;
 		}
 		return total / n;
 	}
 
-	private static double era(ArrayList<pitcher> info) {
+	private static double era(ArrayList<Pitcher> info) {
 		double n = 0;
 		double total = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			n++;
 			total += i.era;
 		}
 		return total / n;
 	}
 
-	private static double whip(ArrayList<pitcher> info) {
+	private static double whip(ArrayList<Pitcher> info) {
 		double n = 0;
 		double total = 0;
-		for (pitcher i : info) {
+		for (Pitcher i : info) {
 			n++;
 			total += i.whip;
 		}
 		return total / n;
 	}
 
-	private static double[][] positionAvg(ArrayList<player> info) {
+	private static double[][] positionAvg(ArrayList<Player> info) {
 		double[] ns = new double[20];
 		double[] totals = new double[20];
 		double[] totalSquare = new double[20];
-		for (player i : info) {
+		for (Player i : info) {
 			for (int p : i.positions) {
 				ns[p]++;
 				totals[p] += i.total;
@@ -496,7 +494,7 @@ public class Ranking {
 				finals[i][0] = totals[i] / ns[i];
 			}
 		}
-		for (player i : info) {
+		for (Player i : info) {
 			for (int p : i.positions) {
 				totalSquare[p] += Math.pow(i.total - totals[p], 2);
 			}

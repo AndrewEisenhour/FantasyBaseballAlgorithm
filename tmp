@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class Lists {
+    ArrayList<batter> batters;
+    ArrayList<pitcher> pitchers;
+    ArrayList<player> players;
+
+    public Lists(ArrayList<batter> _batters, ArrayList<pitcher> _pitchers, ArrayList<player> _players) {
+        batters = _batters;
+        pitchers = _pitchers;
+        players = _players;
+    }
+}

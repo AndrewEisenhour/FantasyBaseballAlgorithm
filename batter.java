@@ -1,4 +1,4 @@
-public class batter {
+public class Batter {
     public String id;
     public String name;
     public double avg;
@@ -9,7 +9,7 @@ public class batter {
     public int[] positions;
     // public double total;
 
-    public batter(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
+    public Batter(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
         name = _name;
         runs = d;
         rbis = e;
