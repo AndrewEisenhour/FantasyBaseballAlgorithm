@@ -7,9 +7,11 @@ public class Batter {
     public double hrs;
     public double sbs;
     public int[] positions;
+    public double abs;
+    public double hs;
     // public double total;
 
-    public Batter(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
+    public Batter(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions, double _abs, double _hs) {
         name = _name;
         runs = d;
         rbis = e;
@@ -18,5 +20,7 @@ public class Batter {
         avg = _avg;
         id = _id;
         positions = _positions;
+        abs = _abs;
+        hs = _hs;
     }
 }

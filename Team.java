@@ -29,11 +29,16 @@ public class Team {
     public double teamrbis;
     public double teamhrs;
     public double teamsbs;
+    public double teamabs;
+    public double teamhs;
     public double teamks;
     public double teamws;
     public double teamsvs;
     public double teamera;
     public double teamwhip;
+    public double teamips;
+    public double teamers;
+    public double teamphbbs;
 
     public Team() {
         batters = new ArrayList<Batter>();
@@ -69,29 +74,34 @@ public class Team {
 
     public void batterCalculate() {
         Batter a = batters.get(batters.size() - 1);
+        teamabs += a.abs;
+        teamhs += a.hs;
         teamruns += a.runs;
-        runNeed -= teamruns / runs;
+        runNeed = 1 - teamruns / runs;
         teamhrs += a.hrs;
-        hrNeed -= teamhrs / hrs;
+        hrNeed = 1 - teamhrs / hrs;
         teamrbis += a.rbis;
-        rbiNeed -= teamrbis / rbis;
+        rbiNeed = 1 - teamrbis / rbis;
         teamsbs += a.sbs;
-        sbNeed -= teamsbs / sbs;
-        teamavg = (teamavg * batters.size() + a.avg) / batters.size();
+        sbNeed = 1 - teamsbs / sbs;
+        teamavg = teamhs / teamabs;
         avgNeed = avg / teamavg;
     }
 
     public void pitcherCalculate() {
         Pitcher a = pitchers.get(pitchers.size() - 1);
+        teamips += a.ips;
+        teamers += a.ers;
+        teamphbbs += a.phbbs;
         teamks += a.ks;
-        kNeed -= teamks / ks;
+        kNeed = 1 - teamks / ks;
         teamws += a.ws;
-        wNeed -= teamws / ws;
+        wNeed = 1 - teamws / ws;
         teamsvs += a.svs;
-        svNeed -= teamsvs / svs;
-        teamera = (teamera * pitchers.size() + a.era) / pitchers.size();
+        svNeed = 1 - teamsvs / svs;
+        teamera = 9 * teamers / teamips;
         eraNeed = teamera / era;
-        teamwhip = (teamwhip * pitchers.size() + a.whip) / pitchers.size();
+        teamwhip = teamphbbs / teamips;
         whipNeed = teamwhip / whip;
     }
 
@@ -111,5 +121,10 @@ public class Team {
         for (Player i : players) {
             System.out.println(i.name);
         }
+    }
+
+    public void printNeed() {
+        System.out.println(runNeed + " " + hrNeed + " " + rbiNeed + " " + sbNeed + " " + avgNeed);
+        System.out.println(kNeed + " " + wNeed + " " + svNeed + " " + eraNeed + " " + whipNeed);
     }
 }

@@ -7,11 +7,11 @@ rawPlayerData = json.load(infile)
 espn_players = rawPlayerData['players']
 player_details = espn_players[0]
 player_line = ""
-batter_categories = ['20', '5', '21', '23', '2']
-pitcher_categories = ['48', '53', '57', '47', '41']
+batter_categories = ['20', '5', '21', '23', '2', '0', '1']
+pitcher_categories = ['48', '53', '57', '47', '41', '34', '45', '37', '39']
 for player in espn_players:
     player_line = str(player['id'])
-    player_line += ":" + str(player['player']['draftRanksByRankType']['STANDARD']['rank'])
+    player_line += ":" + str(player['player']['draftRanksByRankType']['ROTO']['rank'])
     player_line += ":" + " ".join(str(x) for x in player['player']['eligibleSlots'])
     player_line += ":" + player['player']['fullName']
     player_data = player['player']['stats'][0]['stats']

@@ -7,9 +7,12 @@ public class Pitcher {
     public double whip;
     public String id;
     public int[] positions;
+    public double ips;
+    public double ers;
+    public double phbbs;
     // public double total;
 
-    public Pitcher(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions) {
+    public Pitcher(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions, double _ips, double _ers, double _phbbs) {
         name = _name;
         ks = d;
         ws = e;
@@ -18,5 +21,8 @@ public class Pitcher {
         whip = _avg;
         id = _id;
         positions = _positions;
+        ips = _ips;
+        ers = _ers;
+        phbbs = _phbbs;
     }
 }

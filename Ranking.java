@@ -48,7 +48,7 @@ public class Ranking {
 				if (counter % (teamNum + 1) == draftPos)
 					System.out.println("It's you! Duh nu nu, duh nu nu");
 				inputLineOne = scan.nextLine();
-				if (inputLineOne.equals("")){
+				if (inputLineOne.equals("")) {
 					inputLineOne = scan.nextLine();
 				}
 				boolean manualEntry = isInt(inputLineOne);
@@ -59,7 +59,7 @@ public class Ranking {
 					return;
 				}
 				if (counter % (teamNum + 1) == draftPos) {
-					//System.out.println("It's you! Duh nu nu, duh nu nu");
+					// System.out.println("It's you! Duh nu nu, duh nu nu");
 					if (manualEntry) {
 						arr = draft(String.valueOf(line), arr, myTeam);
 						myTeam.print();
@@ -72,6 +72,7 @@ public class Ranking {
 							if (player.name.equals(playerName)) {
 								arr = draft(player.id, arr, myTeam);
 								myTeam.print();
+								myTeam.printNeed();
 								break;
 							}
 						}
@@ -136,7 +137,7 @@ public class Ranking {
 				break;
 			}
 		}
-		
+
 		return arr;
 	}
 
@@ -177,7 +178,8 @@ public class Ranking {
 				info.add(new Batter(batterInfo[1], batterInfo[3], Double.parseDouble(batterInfo[4]),
 						Double.parseDouble(batterInfo[5]), Double.parseDouble(batterInfo[6]),
 						Double.parseDouble(batterInfo[7]), Double.parseDouble(batterInfo[8]),
-						Arrays.stream(batterInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
+						Arrays.stream(batterInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray(),
+						Double.parseDouble(batterInfo[9]), Double.parseDouble(batterInfo[10])));
 			}
 			Batter gary = comp(info);
 			double runSD = runsSD(info, gary.runs);
@@ -192,7 +194,7 @@ public class Ranking {
 			for (Batter i : info) {
 				temp = new Batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
 						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD,
-						i.positions);
+						i.positions, i.abs, i.hs);
 				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
 				temp2 = new Player(temp.name, value, temp.id, temp.positions);
 				stats.add(temp2);
@@ -210,7 +212,8 @@ public class Ranking {
 				info2.add(new Pitcher(pitcherInfo[1], pitcherInfo[3], Double.parseDouble(pitcherInfo[4]),
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
 						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8]),
-						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray()));
+						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray(),
+						Double.parseDouble(pitcherInfo[9]) / 3, Double.parseDouble(pitcherInfo[10]), Double.parseDouble(pitcherInfo[11])+Double.parseDouble(pitcherInfo[12])));
 			}
 			Pitcher joe = comp2(info2);
 			Pitcher temp3;
@@ -222,7 +225,7 @@ public class Ranking {
 			a: for (Pitcher i : info2) {
 				temp3 = new Pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
 						(i.svs - joe.svs) / svSD,
-						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD, i.positions);
+						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD, i.positions, i.ips, i.ers, i.phbbs);
 				temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 						temp3.positions);
 				for (Player a : stats) {
@@ -247,7 +250,7 @@ public class Ranking {
 			for (Player i : stats) {
 				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
 				counter++;
-				if (counter > 10){
+				if (counter > 10) {
 					break;
 				}
 			}
@@ -277,7 +280,7 @@ public class Ranking {
 			temp = new Batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
 					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
 					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD,
-					i.positions);
+					i.positions, i.abs, i.hs);
 			temp2 = new Player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id,
 					temp.positions);
 			stats.add(temp2);
@@ -296,7 +299,7 @@ public class Ranking {
 			temp3 = new Pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
 					myTeam.wNeed * (i.ws - joe.ws) / wSD,
 					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
-					myTeam.whipNeed * (joe.whip - i.whip) / whipSD, i.positions);
+					myTeam.whipNeed * (joe.whip - i.whip) / whipSD, i.positions, i.ips, i.ers, i.phbbs);
 			temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 					temp3.positions);
 			for (Player a : stats) {
@@ -334,13 +337,13 @@ public class Ranking {
 
 	private static Batter comp(ArrayList<Batter> info) {
 		Batter generic = new Batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
-				new int[] { 0 });
+				new int[] { 0 }, 0, 0);
 		return generic;
 	}
 
 	private static Pitcher comp2(ArrayList<Pitcher> info) {
 		Pitcher generic = new Pitcher("0", "Average Joe", ks(info), ws(info), svs(info), era(info), whip(info),
-				new int[] { 0 });
+				new int[] { 0 }, 0, 0, 0);
 		return generic;
 	}
 
