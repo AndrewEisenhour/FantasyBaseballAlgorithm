@@ -63,6 +63,7 @@ public class Ranking {
 					if (manualEntry) {
 						arr = draft(String.valueOf(line), arr, myTeam);
 						myTeam.print();
+						myTeam.printNeed();
 					} else {
 						inputLineTwo = scan.nextLine();
 						playerName = inputLineOne.split("/")[0].trim();
@@ -213,7 +214,8 @@ public class Ranking {
 						Double.parseDouble(pitcherInfo[5]), Double.parseDouble(pitcherInfo[6]),
 						Double.parseDouble(pitcherInfo[7]), Double.parseDouble(pitcherInfo[8]),
 						Arrays.stream(pitcherInfo[2].split(" ")).mapToInt(Integer::parseInt).toArray(),
-						Double.parseDouble(pitcherInfo[9]) / 3, Double.parseDouble(pitcherInfo[10]), Double.parseDouble(pitcherInfo[11])+Double.parseDouble(pitcherInfo[12])));
+						Double.parseDouble(pitcherInfo[9]) / 3, Double.parseDouble(pitcherInfo[10]),
+						Double.parseDouble(pitcherInfo[11]) + Double.parseDouble(pitcherInfo[12])));
 			}
 			Pitcher joe = comp2(info2);
 			Pitcher temp3;
@@ -336,14 +338,17 @@ public class Ranking {
 	}
 
 	private static Batter comp(ArrayList<Batter> info) {
-		Batter generic = new Batter("0", "Boring Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
-				new int[] { 0 }, 0, 0);
+		Batter generic = new Batter("0", "Generic Gary", runs(info), hrs(info), rbis(info), sbs(info), avg(info),
+				new int[] { 0 }, abs(info), hs(info));
+		generic.avg = generic.hs / generic.abs;
 		return generic;
 	}
 
 	private static Pitcher comp2(ArrayList<Pitcher> info) {
 		Pitcher generic = new Pitcher("0", "Average Joe", ks(info), ws(info), svs(info), era(info), whip(info),
-				new int[] { 0 }, 0, 0, 0);
+				new int[] { 0 }, ips(info), ers(info), phbbs(info));
+		generic.era = 9 * generic.ers / generic.ips;
+		generic.whip = generic.phbbs / generic.ips;
 		return generic;
 	}
 
@@ -442,6 +447,26 @@ public class Ranking {
 		return total / n;
 	}
 
+	private static double hs(ArrayList<Batter> info) {
+		double n = 0;
+		double total = 0;
+		for (Batter i : info) {
+			n++;
+			total += i.hs;
+		}
+		return total / n;
+	}
+
+	private static double abs(ArrayList<Batter> info) {
+		double n = 0;
+		double total = 0;
+		for (Batter i : info) {
+			n++;
+			total += i.abs;
+		}
+		return total / n;
+	}
+
 	private static double ksSD(ArrayList<Pitcher> info, double comparison) {
 		double sum = 0;
 		for (Pitcher i : info) {
@@ -533,6 +558,36 @@ public class Ranking {
 		for (Pitcher i : info) {
 			n++;
 			total += i.whip;
+		}
+		return total / n;
+	}
+
+	private static double ips(ArrayList<Pitcher> info) {
+		double n = 0;
+		double total = 0;
+		for (Pitcher i : info) {
+			n++;
+			total += i.ips;
+		}
+		return total / n;
+	}
+
+	private static double ers(ArrayList<Pitcher> info) {
+		double n = 0;
+		double total = 0;
+		for (Pitcher i : info) {
+			n++;
+			total += i.ers;
+		}
+		return total / n;
+	}
+
+	private static double phbbs(ArrayList<Pitcher> info) {
+		double n = 0;
+		double total = 0;
+		for (Pitcher i : info) {
+			n++;
+			total += i.phbbs;
 		}
 		return total / n;
 	}
