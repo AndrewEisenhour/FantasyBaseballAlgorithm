@@ -39,21 +39,60 @@ public class Ranking {
 			Team myTeam = new Team();
 			Team exTeam = new Team();
 			System.out.println("Input a player rank to draft them: (type 0 to stop)");
+			String inputLineOne = "";
+			String inputLineTwo = "";
+			String teamName;
+			String playerName;
 			while (line != 0) {
 				System.out.println("Pick number " + pickNo + ": ");
 				if (counter % (teamNum + 1) == draftPos)
 					System.out.println("It's you! Duh nu nu, duh nu nu");
-				line = scan.nextInt();
-				if (line == 0) {
+				inputLineOne = scan.nextLine();
+				if (inputLineOne.equals("")){
+					inputLineOne = scan.nextLine();
+				}
+				boolean manualEntry = isInt(inputLineOne);
+				if (manualEntry) {
+					line = Integer.parseInt(inputLineOne);
+				}
+				if (manualEntry && line == 0) {
 					return;
 				}
 				if (counter % (teamNum + 1) == draftPos) {
-					System.out.println("It's you! Duh nu nu, duh nu nu");
-					arr = draft(line - 1, arr, myTeam);
-					myTeam.print();
+					//System.out.println("It's you! Duh nu nu, duh nu nu");
+					if (manualEntry) {
+						arr = draft(String.valueOf(line), arr, myTeam);
+						myTeam.print();
+					} else {
+						inputLineTwo = scan.nextLine();
+						playerName = inputLineOne.split("/")[0].trim();
+						teamName = inputLineOne.split("/")[1].split(" ")[0].trim();
+						for (int i = 0; i < arr.players.size(); i++) {
+							Player player = arr.players.get(i);
+							if (player.name.equals(playerName)) {
+								arr = draft(player.id, arr, myTeam);
+								myTeam.print();
+								break;
+							}
+						}
+					}
 					arr = run2(arr.batters, arr.pitchers, myTeam);
 				} else {
-					arr = draftNoTeam(line - 1, arr);
+					if (manualEntry) {
+						arr = draftNoTeam(String.valueOf(line), arr);
+						myTeam.print();
+					} else {
+						inputLineTwo = scan.nextLine();
+						playerName = inputLineOne.split("/")[0].trim();
+						teamName = inputLineOne.split("/")[1].split(" ")[0];
+						for (int i = 0; i < arr.players.size(); i++) {
+							Player player = arr.players.get(i);
+							if (player.name.equals(playerName)) {
+								arr = draftNoTeam(player.id, arr);
+								break;
+							}
+						}
+					}
 					arr = run2(arr.batters, arr.pitchers, exTeam);
 				}
 
@@ -67,15 +106,24 @@ public class Ranking {
 			}
 		}
 		scan.close();
+
 	}
 
-	public static Lists draft(int n, Lists arr, Team teamName) {
-		String id = arr.players.get(n).id;
+	public static Lists draft(String id, Lists arr, Team teamName) {
 		boolean added = false;
+		Player temp = null;
+		for (Player a : arr.players) {
+			if (a.id.equals(id)) {
+				System.out.println("Drafted: " + a.name + " ");
+				temp = a;
+				arr.players.remove(a);
+				break;
+			}
+		}
 		for (Batter a : arr.batters) {
 			if (a.id.equals(id)) {
 				arr.batters.remove(a);
-				teamName.addBatter(a, arr.players.get(n));
+				teamName.addBatter(a, temp);
 				added = true;
 				break;
 			}
@@ -84,17 +132,15 @@ public class Ranking {
 			if (a.id.equals(id)) {
 				arr.pitchers.remove(a);
 				if (!added)
-					teamName.addPitcher(a, arr.players.get(n));
+					teamName.addPitcher(a, temp);
 				break;
 			}
 		}
-		Player temp = arr.players.remove(n);
-		System.out.println("Drafted: " + temp.name + " ");
+		
 		return arr;
 	}
 
-	public static Lists draftNoTeam(int n, Lists arr) {
-		String id = arr.players.get(n).id;
+	public static Lists draftNoTeam(String id, Lists arr) {
 		for (Batter a : arr.batters) {
 			if (a.id.equals(id)) {
 				arr.batters.remove(a);
@@ -107,8 +153,13 @@ public class Ranking {
 				break;
 			}
 		}
-		Player temp = arr.players.remove(n);
-		System.out.println("Drafted: " + temp.name);
+		for (Player a : arr.players) {
+			if (a.id.equals(id)) {
+				System.out.println("Drafted: " + a.name + " ");
+				arr.players.remove(a);
+				break;
+			}
+		}
 		return arr;
 	}
 
@@ -192,8 +243,13 @@ public class Ranking {
 				i.total += i.bestPositionValue;
 			}
 			Collections.sort(stats, new cmpTotal());
+			int counter = 1;
 			for (Player i : stats) {
 				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
+				counter++;
+				if (counter > 10){
+					break;
+				}
 			}
 			Lists list = new Lists(info, info2, stats);
 			return list;
@@ -505,5 +561,17 @@ public class Ranking {
 			}
 		}
 		return finals;
+	}
+
+	public static boolean isInt(String strNum) {
+		if (strNum == null) {
+			return false;
+		}
+		try {
+			int d = Integer.parseInt(strNum);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
 	}
 }
