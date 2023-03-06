@@ -188,14 +188,17 @@ public class Ranking {
 			double hrSD = hrsSD(info, gary.hrs);
 			double sbSD = sbsSD(info, gary.sbs);
 			double avgSD = avgSD(info, gary.avg);
+			double absSD = absSD(info, gary.abs);
 			ArrayList<Player> stats = new ArrayList<Player>();
 			Batter temp;
 			Player temp2;
 			double value;
 			for (Batter i : info) {
 				temp = new Batter(i.id, i.name, (i.runs - gary.runs) / runSD, (i.hrs - gary.hrs) / hrSD,
-						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD, (i.avg - gary.avg) / avgSD,
+						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD,
+						Math.max(((i.abs - gary.abs) / absSD), 1) * (i.avg - gary.avg) / avgSD,
 						i.positions, i.abs, i.hs);
+				temp.printBatter();
 				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
 				temp2 = new Player(temp.name, value, temp.id, temp.positions);
 				stats.add(temp2);
@@ -224,10 +227,14 @@ public class Ranking {
 			double svSD = svsSD(info2, joe.svs);
 			double eraSD = eraSD(info2, joe.era);
 			double whipSD = whipSD(info2, joe.whip);
+			double ipSD = ipsSD(info2, joe.ips);
 			a: for (Pitcher i : info2) {
 				temp3 = new Pitcher(i.id, i.name, (i.ks - joe.ks) / kSD, (i.ws - joe.ws) / wSD,
 						(i.svs - joe.svs) / svSD,
-						(joe.era - i.era) / eraSD, (joe.whip - i.whip) / whipSD, i.positions, i.ips, i.ers, i.phbbs);
+						Math.max(((i.ips - joe.ips) / ipSD), 1) * (joe.era - i.era) / eraSD,
+						Math.max(((i.ips - joe.ips) / ipSD), 1) * (joe.whip - i.whip) / whipSD, i.positions, i.ips,
+						i.ers, i.phbbs);
+				temp3.printPitcher();
 				temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 						temp3.positions);
 				for (Player a : stats) {
@@ -275,13 +282,15 @@ public class Ranking {
 		double hrSD = hrsSD(info, gary.hrs);
 		double sbSD = sbsSD(info, gary.sbs);
 		double avgSD = avgSD(info, gary.avg);
+		double absSD = absSD(info, gary.abs);
 		ArrayList<Player> stats = new ArrayList<Player>();
 		Batter temp;
 		Player temp2;
 		for (Batter i : info) {
 			temp = new Batter(i.id, i.name, myTeam.runNeed * (i.runs - gary.runs) / runSD,
 					myTeam.hrNeed * (i.hrs - gary.hrs) / hrSD, myTeam.rbiNeed * (i.rbis - gary.rbis) / rbiSD,
-					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD, myTeam.avgNeed * (i.avg - gary.avg) / avgSD,
+					myTeam.sbNeed * (i.sbs - gary.sbs) / sbSD,
+					myTeam.avgNeed * Math.max(((i.abs - gary.abs) / absSD), 1) * (i.avg - gary.avg) / avgSD,
 					i.positions, i.abs, i.hs);
 			temp2 = new Player(temp.name, temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg, temp.id,
 					temp.positions);
@@ -297,11 +306,15 @@ public class Ranking {
 		double svSD = svsSD(info2, joe.svs);
 		double eraSD = eraSD(info2, joe.era);
 		double whipSD = whipSD(info2, joe.whip);
+		double ipSD = ipsSD(info2, joe.ips);
 		a: for (Pitcher i : info2) {
 			temp3 = new Pitcher(i.id, i.name, myTeam.kNeed * (i.ks - joe.ks) / kSD,
 					myTeam.wNeed * (i.ws - joe.ws) / wSD,
-					myTeam.svNeed * (i.svs - joe.svs) / svSD, myTeam.eraNeed * (joe.era - i.era) / eraSD,
-					myTeam.whipNeed * (joe.whip - i.whip) / whipSD, i.positions, i.ips, i.ers, i.phbbs);
+					myTeam.svNeed * (i.svs - joe.svs) / svSD,
+					myTeam.eraNeed * Math.max(((i.ips - joe.ips) / ipSD), 1) * (joe.era - i.era) / eraSD,
+					myTeam.whipNeed * Math.max(((i.ips - joe.ips) / ipSD), 1) * (joe.whip - i.whip) / whipSD,
+					i.positions, i.ips,
+					i.ers, i.phbbs);
 			temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 					temp3.positions);
 			for (Player a : stats) {
@@ -392,6 +405,15 @@ public class Ranking {
 		double sum = 0;
 		for (Batter i : info) {
 			sum += Math.pow(i.avg - comparison, 2);
+		}
+		sum /= info.size();
+		return Math.sqrt(sum);
+	}
+
+	private static double absSD(ArrayList<Batter> info, double comparison) {
+		double sum = 0;
+		for (Batter i : info) {
+			sum += Math.pow(i.abs - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);
@@ -507,6 +529,15 @@ public class Ranking {
 		double sum = 0;
 		for (Pitcher i : info) {
 			sum += Math.pow(i.whip - comparison, 2);
+		}
+		sum /= info.size();
+		return Math.sqrt(sum);
+	}
+
+	private static double ipsSD(ArrayList<Pitcher> info, double comparison) {
+		double sum = 0;
+		for (Pitcher i : info) {
+			sum += Math.pow(i.ips - comparison, 2);
 		}
 		sum /= info.size();
 		return Math.sqrt(sum);

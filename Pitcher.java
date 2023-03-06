@@ -12,17 +12,21 @@ public class Pitcher {
     public double phbbs;
     // public double total;
 
-    public Pitcher(String _id, String _name, double d, double e, double f, double g, double _avg, int[] _positions, double _ips, double _ers, double _phbbs) {
+    public Pitcher(String _id, String _name, double _ks, double _ws, double _svs, double _era, double _whip, int[] _positions, double _ips, double _ers, double _phbbs) {
         name = _name;
-        ks = d;
-        ws = e;
-        svs = f;
-        era = g;
-        whip = _avg;
+        ks = _ks;
+        ws = _ws;
+        svs = _svs;
+        era = _era;
+        whip = _whip;
         id = _id;
         positions = _positions;
         ips = _ips;
         ers = _ers;
         phbbs = _phbbs;
+    }
+
+    public void printPitcher(){
+        System.out.println(name + " " + ks + " " + ws + " " + svs + " " + era + " " + whip);
     }
 }

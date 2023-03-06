@@ -77,15 +77,15 @@ public class Team {
         teamabs += a.abs;
         teamhs += a.hs;
         teamruns += a.runs;
-        runNeed = 1 - teamruns / runs;
+        runNeed = Math.max(1 - teamruns / runs, 0);
         teamhrs += a.hrs;
-        hrNeed = 1 - teamhrs / hrs;
+        hrNeed = Math.max(1 - teamhrs / hrs, 0);
         teamrbis += a.rbis;
-        rbiNeed = 1 - teamrbis / rbis;
+        rbiNeed = Math.max(1 - teamrbis / rbis, 0);
         teamsbs += a.sbs;
-        sbNeed = 1 - teamsbs / sbs;
+        sbNeed = Math.max(1 - teamsbs / sbs, 0);
         teamavg = teamhs / teamabs;
-        avgNeed = avg / teamavg;
+        avgNeed = Math.max(avg / teamavg, 1);
     }
 
     public void pitcherCalculate() {
@@ -94,15 +94,15 @@ public class Team {
         teamers += a.ers;
         teamphbbs += a.phbbs;
         teamks += a.ks;
-        kNeed = 1 - teamks / ks;
+        kNeed = Math.max(1 - teamks / ks, 0);
         teamws += a.ws;
-        wNeed = 1 - teamws / ws;
+        wNeed = Math.max(1 - teamws / ws, 0);
         teamsvs += a.svs;
-        svNeed = 1 - teamsvs / svs;
+        svNeed = Math.max(1 - teamsvs / svs, 0);
         teamera = 9 * teamers / teamips;
-        eraNeed = teamera / era;
+        eraNeed = Math.max(teamera / era, 1);
         teamwhip = teamphbbs / teamips;
-        whipNeed = teamwhip / whip;
+        whipNeed = Math.max(teamwhip / whip, 1);
     }
 
     public void addPitcher(Pitcher a, Player b) {
