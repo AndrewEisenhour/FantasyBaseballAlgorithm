@@ -89,3 +89,61 @@ STATS_MAP = {
     83: 'SVHD', # Saves + Holds
     99: 'STARTER',
 }
+
+POSITION_MAP = {
+    0: 'C',
+    1: '1B',
+    2: '2B',
+    3: '3B',
+    4: 'SS',
+    5: 'OF',
+    6: '2B/SS',
+    7: '1B/3B',
+    8: 'LF',
+    9: 'CF',
+    10: 'RF',
+    11: 'DH',
+    12: 'UTIL',
+    13: 'P',
+    14: 'SP',
+    15: 'RP',
+    16: 'BE',
+    17: 'IL',
+    19: 'IF', # 1B/2B/SS/3B
+    # reverse TODO
+    # 18, 21, 22 have appeared but unknown what position they correspond to
+}
+
+PRO_TEAM_MAP = {
+    0: 'FA',
+    1: 'Bal',
+    2: 'Bos',
+    3: 'LAA',
+    4: 'ChW',
+    5: 'Cle',
+    6: 'Det',
+    7: 'KC',
+    8: 'Mil',
+    9: 'Min',
+    10: 'NYY',
+    11: 'Oak',
+    12: 'Sea',
+    13: 'Tex',
+    14: 'Tor',
+    15: 'Atl',
+    16: 'ChC',
+    17: 'Cin',
+    18: 'Hou',
+    19: 'LAD',
+    20: 'Wsh',
+    21: 'NYM',
+    22: 'Phi',
+    23: 'Pit',
+    24: 'StL',
+    25: 'SD',
+    26: 'SF',
+    27: 'Col',
+    28: 'Mia',
+    29: 'Ari',
+    30: 'TB',
+}

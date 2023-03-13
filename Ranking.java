@@ -259,10 +259,12 @@ public class Ranking {
 			for (Player i : stats) {
 				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
 				counter++;
-				if (counter > 10) {
+				if (counter > 25) {
 					break;
 				}
 			}
+			printBestAtEachPosition(stats);
+
 			Lists list = new Lists(info, info2, stats);
 			return list;
 		} catch (FileNotFoundException e) {
@@ -344,6 +346,7 @@ public class Ranking {
 				break;
 			}
 		}
+		printBestAtEachPosition(stats);
 		Lists list = new Lists(info, info2, stats);
 
 		return list;
@@ -662,5 +665,74 @@ public class Ranking {
 			return false;
 		}
 		return true;
+	}
+
+	public static void printBestAtEachPosition(List<Player> players) {
+		Player bestFirst = null;
+		Player bestSecond = null;
+		Player bestShort = null;
+		Player bestThird = null;
+		Player bestOutfield = null;
+		Player bestCatcher = null;
+		Player bestStarter = null;
+		Player bestReliever = null;
+		int counter = 8;
+		boolean[] gotOne = new boolean[8];
+		for (Player a : players) {
+			for (int i = 0; i < a.positions.length; i++) {
+				int pos = a.positions[i];
+				if (pos == 0 && !gotOne[pos]) {
+					bestCatcher = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 1 && !gotOne[pos]) {
+					bestFirst = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 2 && !gotOne[pos]) {
+					bestSecond = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 3 && !gotOne[pos]) {
+					bestThird = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 4 && !gotOne[pos]) {
+					bestShort = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 5 && !gotOne[pos]) {
+					bestOutfield = a;
+					gotOne[pos] = true;
+					counter--;
+				}
+				if (pos == 14 && !gotOne[pos - 8]) {
+					bestStarter = a;
+					gotOne[pos - 8] = true;
+					counter--;
+				}
+				if (pos == 15 && !gotOne[pos - 8]) {
+					bestReliever = a;
+					gotOne[pos - 8] = true;
+					counter--;
+				}
+				if (counter == 0) {
+					break;
+				}
+			}
+		}
+		System.out.println("Catcher: " + bestCatcher.id + " " + bestCatcher.name);
+		System.out.println("First Base: " + bestFirst.id + " " + bestFirst.name);
+		System.out.println("Second Base: " + bestSecond.id + " " + bestSecond.name);
+		System.out.println("Third Base: " + bestThird.id + " " + bestThird.name);
+		System.out.println("Shortstop: " + bestShort.id + " " + bestShort.name);
+		System.out.println("Outfielder: " + bestOutfield.id + " " + bestOutfield.name);
+		System.out.println("Starting Pitcher: " + bestStarter.id + " " + bestStarter.name);
+		System.out.println("Relief Pitcher: " + bestReliever.id + " " + bestReliever.name);
 	}
 }
