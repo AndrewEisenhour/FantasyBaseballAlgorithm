@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ranking",
+            "request": "launch",
+            "mainClass": "Algorithm.Ranking",
+            "projectName": "FantasyBaseballAlgorithm_baca722e"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",
