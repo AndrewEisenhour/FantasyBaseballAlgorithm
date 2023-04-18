@@ -17,3 +17,11 @@ Once the data is prepared, you can run "Algorithm/Ranking.java" in order to star
 
 ![image](https://user-images.githubusercontent.com/54419359/231325572-d88d22a1-dcd6-453c-acdf-aa56da35cc6c.png)
 ![image](https://user-images.githubusercontent.com/54419359/231325617-53a79d82-6e95-490f-8e55-28083ae18e16.png)
+
+
+## Helpful Sources
+[https://github.com/cwendt94/espn-api](https://github.com/cwendt94/espn-api)
+[https://stmorse.github.io/journal/espn-fantasy-v3.html](https://stmorse.github.io/journal/espn-fantasy-v3.html)
+[https://jman4190.medium.com/how-to-use-python-with-the-espn-fantasy-draft-api-
+ecde38621b1b](https://jman4190.medium.com/how-to-use-python-with-the-espn-fantasy-draft-api-
+ecde38621b1b)
