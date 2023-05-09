@@ -14,3 +14,12 @@ Before running the actual algorithm, you must run "getRequest.py" and "processDa
 ## Drafting
 
 Once the data is prepared, you can run "Algorithm/Ranking.java" in order to start the draft. This will give initial values for all players based on their projections and then proceed to ask if you would like to draft. Enter "y" for yes, and then input the number of players in the draft and your draft positions. At this point, you can begin feeding the algoritm picks as they come in or at any time before your next pick. You can either type the number of the drafted player in the CLI, or you can copy and paste from ESPN's pick log. See "exampleDraft.txt" for the required format of draft picks. Simply copying and pasting from the pick log will achieve this format. The values of players will change after each pick. The top ten most valuable players will be shown first, followed by the most valuable at each position. The algorithm does not account for positional slots already being filled, so the user will need to account for that on their own. Screenshots will be attached at a later point.
+
+![image](https://user-images.githubusercontent.com/54419359/231325572-d88d22a1-dcd6-453c-acdf-aa56da35cc6c.png)
+![image](https://user-images.githubusercontent.com/54419359/231325617-53a79d82-6e95-490f-8e55-28083ae18e16.png)
+
+
+## Helpful Sources
+[https://github.com/cwendt94/espn-api](https://github.com/cwendt94/espn-api)  
+[https://stmorse.github.io/journal/espn-fantasy-v3.html](https://stmorse.github.io/journal/espn-fantasy-v3.html)  
+[https://jman4190.medium.com/how-to-use-python-with-the-espn-fantasy-draft-api-ecde38621b1b](https://jman4190.medium.com/how-to-use-python-with-the-espn-fantasy-draft-api-ecde38621b1b)
