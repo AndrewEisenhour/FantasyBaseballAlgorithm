@@ -1,569 +1,569 @@
-Aaron Judge / NYY OF, DH
-R1, P1 - Team Kaz
-
-Shohei Ohtani / LAA DH, SP
-R1, P2 - Team Eisenhour
+Jose Ramirez / Cle 3B, DH
+R1, P1 - Team 1
 
 Trea Turner / Phi SS
-R1, P3 - Team English
+R1, P2 - Team 2
 
 Julio Rodriguez / Sea OF
+R1, P3 - Team 3
+
+Shohei Ohtani / LAA DH, SP
 R1, P4 - Team 4
 
-Kyle Tucker / Hou OF
-R1, P5 - Team Gonterman
+Aaron Judge / NYY OF, DH
+R1, P5 - Team Eisenhour
 
-Jose Ramirez / Cle 3B, DH
+Kyle Tucker / Hou OF
 R1, P6 - Team 6
 
-Juan Soto / SD OF
+Ronald Acuna Jr. / Atl OF, DH
 R1, P7 - Team 7
 
-Ronald Acuna Jr. / Atl OF, DH
+Mookie Betts / LAD OF
 R1, P8 - Team 8
 
-Mookie Betts / LAD OF
+Vladimir Guerrero Jr. / Tor 1B, DH
 R1, P9 - Team 9
 
 Yordan Alvarez / Hou OF, DH
-R1, P10 - Team gagliano
+R1, P10 - Team 10
 
-Manny Machado / SD 3B
-R2, P1 - Team gagliano
+Pete Alonso / NYM 1B, DH
+R2, P1 - Team 10
 
 Freddie Freeman / LAD 1B
 R2, P2 - Team 9
 
-Bobby Witt Jr. / KC SS, 3B
+Bo Bichette / Tor SS
 R2, P3 - Team 8
 
-Vladimir Guerrero Jr. / Tor 1B, DH
+Manny Machado / SD 3B
 R2, P4 - Team 7
 
-Rafael Devers / Bos 3B
+Juan Soto / SD OF
 R2, P5 - Team 6
 
-Mike Trout / LAA OF
-R2, P6 - Team Gonterman
-
 Corbin Burnes / Mil SP
+R2, P6 - Team Eisenhour
+
+Bobby Witt Jr. / KC SS, 3B
 R2, P7 - Team 4
 
-Pete Alonso / NYM 1B, DH
-R2, P8 - Team English
+Rafael Devers / Bos 3B
+R2, P8 - Team 3
+
+Fernando Tatis Jr. / SD SS, OF
+R2, P9 - Team 2
+
+Austin Riley / Atl 3B
+R2, P10 - Team 1
 
 Gerrit Cole / NYY SP
-R2, P9 - Team Eisenhour
-
-Nolan Arenado / StL 3B
-R2, P10 - Team Kaz
-
-Paul Goldschmidt / StL 1B, DH
-R3, P1 - Team Kaz
+R3, P1 - Team 1
 
 Sandy Alcantara / Mia SP
-R3, P2 - Team Eisenhour
+R3, P2 - Team 2
 
-Bo Bichette / Tor SS
-R3, P3 - Team English
+Mike Trout / LAA OF
+R3, P3 - Team 3
 
-Francisco Lindor / NYM SS
+Paul Goldschmidt / StL 1B, DH
 R3, P4 - Team 4
 
-Jeremy Pena / Hou SS
-R3, P5 - Team Gonterman
+Matt Olson / Atl 1B
+R3, P5 - Team Eisenhour
 
-Fernando Tatis Jr. / SD SS
+Francisco Lindor / NYM SS
 R3, P6 - Team 6
 
 Marcus Semien / Tex 2B
 R3, P7 - Team 7
 
-Austin Riley / Atl 3B
+Max Scherzer / NYM SP
 R3, P8 - Team 8
 
-Spencer Strider / Atl SP, RP
+Justin Verlander / NYM SP
 R3, P9 - Team 9
 
-Brandon Woodruff / Mil SP
-R3, P10 - Team gagliano
+Nolan Arenado / StL 3B
+R3, P10 - Team 10
 
-Shane McClanahan / TB SP
-R4, P1 - Team gagliano
+Brandon Woodruff / Mil SP
+R4, P1 - Team 10
 
 Michael Harris II / Atl OF
 R4, P2 - Team 9
 
-Max Scherzer / NYM SP
+Aaron Nola / Phi SP
 R4, P3 - Team 8
 
-Aaron Nola / Phi SP
+Shane McClanahan / TB SP
 R4, P4 - Team 7
 
-Justin Verlander / NYM SP
+Cedric Mullins / Bal OF
 R4, P5 - Team 6
 
-Alex Bregman / Hou 3B
-R4, P6 - Team Gonterman
+Kyle Schwarber / Phi OF, DH
+R4, P6 - Team Eisenhour
 
 Zack Wheeler / Phi SP
 R4, P7 - Team 4
 
-Jose Altuve / Hou 2B
-R4, P8 - Team English
-
-Matt Olson / Atl 1B
-R4, P9 - Team Eisenhour
-
-Teoscar Hernandez / Sea OF
-R4, P10 - Team Kaz
-
-Eloy Jimenez / ChW OF, DH
-R5, P1 - Team Kaz
-
-George Springer / Tor OF, DH
-R5, P2 - Team Eisenhour
-
-Carlos Rodon / NYY SP
-R5, P3 - Team English
-
-Jacob deGrom / Tex SP
-R5, P4 - Team 4
-
-Martin Maldonado / Hou C
-R5, P5 - Team Gonterman
-
-Luis Robert / ChW OF
-R5, P6 - Team 6
-
-Cedric Mullins / Bal OF
-R5, P7 - Team 7
-
-Ozzie Albies / Atl 2B
-R5, P8 - Team 8
-
-Julio Urias / LAD SP
-R5, P9 - Team 9
-
-Dylan Cease / ChW SP
-R5, P10 - Team gagliano
-
-Jazz Chisholm Jr. / Mia 2B
-R6, P1 - Team gagliano
-
-Corey Seager / Tex SS
-R6, P2 - Team 9
-
-Kyle Schwarber / Phi OF
-R6, P3 - Team 8
+Spencer Strider / Atl SP, RP
+R4, P8 - Team 3
 
 Randy Arozarena / TB OF, DH
-R6, P4 - Team 7
+R4, P9 - Team 2
 
-J.T. Realmuto / Phi C
-R6, P5 - Team 6
-
-Bryce Harper / Phi DH
-R6, P6 - Team Gonterman
+Luis Robert Jr. / ChW OF
+R4, P10 - Team 1
 
 Corbin Carroll / Ari OF
-R6, P7 - Team 4
+R5, P1 - Team 1
 
-Josh Hader / SD RP
-R6, P8 - Team English
+Ozzie Albies / Atl 2B
+R5, P2 - Team 2
 
-Adolis Garcia / Tex OF, DH
-R6, P9 - Team Eisenhour
+Corey Seager / Tex SS
+R5, P3 - Team 3
 
-Kevin Gausman / Tor SP
-R6, P10 - Team Kaz
-
-Carlos Correa / Min SS
-R7, P1 - Team Kaz
-
-Starling Marte / NYM OF
-R7, P2 - Team Eisenhour
-
-Alek Manoah / Tor SP
-R7, P3 - Team English
-
-Edwin Diaz / NYM RP
-R7, P4 - Team 4
-
-Framber Valdez / Hou SP
-R7, P5 - Team Gonterman
-
-Shane Bieber / Cle SP
-R7, P6 - Team 6
+Julio Urias / LAD SP
+R5, P4 - Team 4
 
 Emmanuel Clase / Cle RP
-R7, P7 - Team 7
+R5, P5 - Team Eisenhour
 
-Max Fried / Atl SP
-R7, P8 - Team 8
+Dylan Cease / ChW SP
+R5, P6 - Team 6
+
+Shane Bieber / Cle SP
+R5, P7 - Team 7
+
+Jazz Chisholm Jr. / Mia 2B, OF
+R5, P8 - Team 8
+
+Adolis Garcia / Tex OF, DH
+R5, P9 - Team 9
+
+J.T. Realmuto / Phi C
+R5, P10 - Team 10
+
+Jacob deGrom / Tex SP
+R6, P1 - Team 10
+
+Alek Manoah / Tor SP
+R6, P2 - Team 9
+
+Kevin Gausman / Tor SP
+R6, P3 - Team 8
 
 Luis Castillo / Sea SP
-R7, P9 - Team 9
-
-Daulton Varsho / Tor C, OF
-R7, P10 - Team gagliano
+R6, P4 - Team 7
 
 Zac Gallen / Ari SP
-R8, P1 - Team gagliano
-
-Dansby Swanson / ChC SS
-R8, P2 - Team 9
-
-Will Smith / LAD C, DH
-R8, P3 - Team 8
-
-Devin Williams / Mil RP
-R8, P4 - Team 7
-
-Joe Musgrove / SD SP
-R8, P5 - Team 6
-
-Salvador Perez / KC C, DH
-R8, P6 - Team Gonterman
-
-Gunnar Henderson / Bal 3B
-R8, P7 - Team 4
-
-Cristian Javier / Hou SP
-R8, P8 - Team English
-
-Jordan Romano / Tor RP
-R8, P9 - Team Eisenhour
-
-Alejandro Kirk / Tor C, DH
-R8, P10 - Team Kaz
-
-Yu Darvish / SD SP
-R9, P1 - Team Kaz
-
-Ryan Pressly / Hou RP
-R9, P2 - Team Eisenhour
-
-Adley Rutschman / Bal C, DH
-R9, P3 - Team English
-
-Xander Bogaerts / SD SS
-R9, P4 - Team 4
-
-Jose Abreu / Hou 1B, DH
-R9, P5 - Team Gonterman
-
-Robbie Ray / Sea SP
-R9, P6 - Team 6
-
-Tyler Glasnow / TB SP
-R9, P7 - Team 7
-
-Nathaniel Lowe / Tex 1B
-R9, P8 - Team 8
-
-Bryan Reynolds / Pit OF
-R9, P9 - Team 9
-
-Wander Franco / TB SS
-R9, P10 - Team gagliano
-
-Oneil Cruz / Pit SS
-R10, P1 - Team gagliano
-
-George Kirby / Sea SP
-R10, P2 - Team 9
-
-Vinnie Pasquantino / KC 1B, DH
-R10, P3 - Team 8
-
-Triston McKenzie / Cle SP
-R10, P4 - Team 7
-
-Byron Buxton / Min OF, DH
-R10, P5 - Team 6
-
-Felix Bautista / Bal RP
-R10, P6 - Team Gonterman
-
-Lucas Giolito / ChW SP
-R10, P7 - Team 4
-
-Brandon Nimmo / NYM OF
-R10, P8 - Team English
-
-Willy Adames / Mil SS
-R10, P9 - Team Eisenhour
-
-Freddy Peralta / Mil SP
-R10, P10 - Team Kaz
-
-Lance Lynn / ChW SP
-R11, P1 - Team Kaz
+R6, P5 - Team 6
 
 Logan Webb / SF SP
-R11, P2 - Team Eisenhour
+R6, P6 - Team Eisenhour
 
-Kris Bryant / Col OF
-R11, P3 - Team English
+Teoscar Hernandez / Sea OF
+R6, P7 - Team 4
 
-Ryan Helsley / StL RP
-R11, P4 - Team 4
+Max Fried / Atl SP
+R6, P8 - Team 3
+
+Will Smith / LAD C, DH
+R6, P9 - Team 2
+
+Carlos Rodon / NYY SP
+R6, P10 - Team 1
+
+Adley Rutschman / Bal C, DH
+R7, P1 - Team 1
+
+Daulton Varsho / Tor C, OF
+R7, P2 - Team 2
+
+Eloy Jimenez / ChW OF, DH
+R7, P3 - Team 3
+
+Dansby Swanson / ChC SS
+R7, P4 - Team 4
+
+Oneil Cruz / Pit SS
+R7, P5 - Team Eisenhour
+
+George Springer / Tor OF, DH
+R7, P6 - Team 6
+
+Gunnar Henderson / Bal 3B
+R7, P7 - Team 7
+
+Wander Franco / TB SS
+R7, P8 - Team 8
+
+Salvador Perez / KC C, DH
+R7, P9 - Team 9
+
+Jeremy Pena / Hou SS
+R7, P10 - Team 10
+
+Yu Darvish / SD SP
+R8, P1 - Team 10
+
+Josh Hader / SD RP
+R8, P2 - Team 9
+
+Devin Williams / Mil RP
+R8, P3 - Team 8
+
+Starling Marte / NYM OF
+R8, P4 - Team 7
+
+Cristian Javier / Hou SP
+R8, P5 - Team 6
+
+Framber Valdez / Hou SP
+R8, P6 - Team Eisenhour
+
+Alex Bregman / Hou 3B
+R8, P7 - Team 4
+
+Xander Bogaerts / SD SS
+R8, P8 - Team 3
+
+Jose Abreu / Hou 1B, DH
+R8, P9 - Team 2
 
 Tyler O'Neill / StL OF
-R11, P5 - Team Gonterman
+R8, P10 - Team 1
+
+George Kirby / Sea SP
+R9, P1 - Team 1
+
+Jordan Romano / Tor RP
+R9, P2 - Team 2
+
+Ryan Pressly / Hou RP
+R9, P3 - Team 3
+
+Triston McKenzie / Cle SP
+R9, P4 - Team 4
 
 Andres Gimenez / Cle 2B
-R11, P6 - Team 6
+R9, P5 - Team Eisenhour
+
+Nathaniel Lowe / Tex 1B
+R9, P6 - Team 6
+
+Bryan Reynolds / Pit OF
+R9, P7 - Team 7
+
+Ryan Helsley / StL RP
+R9, P8 - Team 8
+
+Robbie Ray / Sea SP
+R9, P9 - Team 9
 
 Tim Anderson / ChW SS
-R11, P7 - Team 7
-
-Seiya Suzuki / ChC OF
-R11, P8 - Team 8
-
-Kyle Wright / Atl SP
-R11, P9 - Team 9
+R9, P10 - Team 10
 
 Logan Gilbert / Sea SP
-R11, P10 - Team gagliano
+R10, P1 - Team 10
 
-Clayton Kershaw / LAD SP
-R12, P1 - Team gagliano
+Carlos Correa / Min SS
+R10, P2 - Team 9
 
-Tommy Edman / StL 2B, SS
-R12, P2 - Team 9
+Felix Bautista / Bal RP
+R10, P3 - Team 8
 
-Luis Severino / NYY SP
-R12, P3 - Team 8
+Willy Adames / Mil SS
+R10, P4 - Team 7
 
 Hunter Greene / Cin SP
-R12, P4 - Team 7
-
-Kenley Jansen / Bos RP
-R12, P5 - Team 6
-
-Nestor Cortes / NYY SP
-R12, P6 - Team Gonterman
-
-Steven Kwan / Cle OF
-R12, P7 - Team 4
-
-Raisel Iglesias / Atl RP
-R12, P8 - Team English
-
-Willson Contreras / StL C, DH
-R12, P9 - Team Eisenhour
-
-Clay Holmes / NYY RP
-R12, P10 - Team Kaz
-
-Dustin May / LAD SP
-R13, P1 - Team Kaz
-
-Jake Cronenworth / SD 2B, 1B
-R13, P2 - Team Eisenhour
-
-Blake Snell / SD SP
-R13, P3 - Team English
-
-C.J. Cron / Col 1B, DH
-R13, P4 - Team 4
-
-Camilo Doval / SF RP
-R13, P5 - Team Gonterman
-
-Rhys Hoskins / Phi 1B
-R13, P6 - Team 6
-
-Amed Rosario / Cle SS
-R13, P7 - Team 7
-
-Scott Barlow / KC RP
-R13, P8 - Team 8
-
-William Contreras / Mil C, DH
-R13, P9 - Team 9
-
-Christian Yelich / Mil OF, DH
-R13, P10 - Team gagliano
-
-Nick Castellanos / Phi OF
-R14, P1 - Team gagliano
-
-Nick Lodolo / Cin SP
-R14, P2 - Team 9
-
-David Bednar / Pit RP
-R14, P3 - Team 8
-
-MJ Melendez / KC C, OF, DH
-R14, P4 - Team 7
-
-Taylor Ward / LAA OF
-R14, P5 - Team 6
-
-Gleyber Torres / NYY 2B
-R14, P6 - Team Gonterman
-
-Joe Ryan / Min SP
-R14, P7 - Team 4
-
-Jake McCarthy / Ari OF
-R14, P8 - Team English
-
-Matt Chapman / Tor 3B
-R14, P9 - Team Eisenhour
-
-Ryan Mountcastle / Bal 1B, DH
-R14, P10 - Team Kaz
-
-Brandon Lowe / TB 2B
-R15, P1 - Team Kaz
+R10, P5 - Team 6
 
 Anthony Santander / Bal OF, DH
-R15, P2 - Team Eisenhour
+R10, P6 - Team Eisenhour
 
-Alexis Diaz / Cin RP
-R15, P3 - Team English
+Kenley Jansen / Bos RP
+R10, P7 - Team 4
 
-Max Muncy / LAD 3B, 2B, DH
-R15, P4 - Team 4
+Tommy Edman / StL 2B, SS
+R10, P8 - Team 3
 
-Jesus Luzardo / Mia SP
-R15, P5 - Team Gonterman
+Vinnie Pasquantino / KC 1B, DH
+R10, P9 - Team 2
 
-Chris Sale / Bos SP
-R15, P6 - Team 6
+Joe Musgrove / SD SP
+R10, P10 - Team 1
 
-Eugenio Suarez / Sea 3B
-R15, P7 - Team 7
+Anthony Volpe / NYY SS
+R11, P1 - Team 1
 
-Andres Munoz / Sea RP
-R15, P8 - Team 8
+Blake Snell / SD SP
+R11, P2 - Team 2
 
-Daniel Bard / Col RP
-R15, P9 - Team 9
+C.J. Cron / Col 1B, DH
+R11, P3 - Team 3
 
-Christian Walker / Ari 1B
-R15, P10 - Team gagliano
+Nick Castellanos / Phi OF
+R11, P4 - Team 4
 
-Nico Hoerner / ChC SS
-R16, P1 - Team gagliano
+Raisel Iglesias / Atl RP
+R11, P5 - Team Eisenhour
 
-Jose Miranda / Min 1B, 3B, DH
-R16, P2 - Team 9
+Alejandro Kirk / Tor C, DH
+R11, P6 - Team 6
 
-Jhoan Duran / Min RP
-R16, P3 - Team 8
+Nick Lodolo / Cin SP
+R11, P7 - Team 7
 
-Luis Garcia / Hou SP
-R16, P4 - Team 7
+Jake McCarthy / Ari OF
+R11, P8 - Team 8
 
-Chris Bassitt / Tor SP
-R16, P5 - Team 6
+Kris Bryant / Col OF
+R11, P9 - Team 9
+
+Steven Kwan / Cle OF
+R11, P10 - Team 10
 
 Andrew Vaughn / ChW OF, 1B, DH
-R16, P6 - Team Gonterman
+R12, P1 - Team 10
 
-Sean Murphy / Atl C, DH
-R16, P7 - Team 4
+Jordan Walker / StL 3B, OF
+R12, P2 - Team 9
 
-Hunter Renfroe / LAA OF
-R16, P8 - Team English
+William Contreras / Mil C, DH
+R12, P3 - Team 8
+
+Willson Contreras / StL C, DH
+R12, P4 - Team 7
+
+Camilo Doval / SF RP
+R12, P5 - Team 6
 
 Pablo Lopez / Min SP
-R16, P9 - Team Eisenhour
+R12, P6 - Team Eisenhour
+
+Nestor Cortes / NYY SP
+R12, P7 - Team 4
+
+Joe Ryan / Min SP
+R12, P8 - Team 3
+
+Clayton Kershaw / LAD SP
+R12, P9 - Team 2
+
+Lucas Giolito / ChW SP
+R12, P10 - Team 1
+
+Christian Walker / Ari 1B
+R13, P1 - Team 1
+
+Lance Lynn / ChW SP
+R13, P2 - Team 2
+
+Sean Murphy / Atl C, DH
+R13, P3 - Team 3
+
+Christian Yelich / Mil OF, DH
+R13, P4 - Team 4
+
+Amed Rosario / Cle SS
+R13, P5 - Team Eisenhour
+
+Jose Altuve / Hou 2B
+R13, P6 - Team 6
+
+Alexis Diaz / Cin RP
+R13, P7 - Team 7
+
+Byron Buxton / Min OF, DH
+R13, P8 - Team 8
+
+Gleyber Torres / NYY 2B
+R13, P9 - Team 9
+
+Nico Hoerner / ChC SS, 2B
+R13, P10 - Team 10
+
+Scott Barlow / KC RP
+R14, P1 - Team 10
+
+Clay Holmes / NYY RP
+R14, P2 - Team 9
+
+Freddy Peralta / Mil SP
+R14, P3 - Team 8
+
+Joey Meneses / Wsh 1B, OF, DH
+R14, P4 - Team 7
+
+Luis Severino / NYY SP
+R14, P5 - Team 6
+
+Luis Garcia / Hou SP
+R14, P6 - Team Eisenhour
+
+Kyle Wright / Atl SP
+R14, P7 - Team 4
+
+David Bednar / Pit RP
+R14, P8 - Team 3
+
+Eugenio Suarez / Sea 3B
+R14, P9 - Team 2
+
+Jhoan Duran / Min RP
+R14, P10 - Team 1
+
+Tyler Glasnow / TB SP
+R15, P1 - Team 1
+
+Jesus Luzardo / Mia SP
+R15, P2 - Team 2
+
+Andres Munoz / Sea RP
+R15, P3 - Team 3
+
+Tyler Stephenson / Cin C, DH
+R15, P4 - Team 4
+
+Matt Chapman / Tor 3B
+R15, P5 - Team Eisenhour
+
+Max Muncy / LAD 3B, 2B, DH
+R15, P6 - Team 6
+
+Taylor Ward / LAA OF
+R15, P7 - Team 7
+
+MJ Melendez / KC C, OF, DH
+R15, P8 - Team 8
+
+Hunter Renfroe / LAA OF
+R15, P9 - Team 9
 
 Giancarlo Stanton / NYY OF, DH
-R16, P10 - Team Kaz
+R15, P10 - Team 10
+
+Reid Detmers / LAA SP
+R16, P1 - Team 10
+
+Bryce Harper / Phi DH
+R16, P2 - Team 9
 
 Anthony Rizzo / NYY 1B
-R17, P1 - Team Kaz
+R16, P3 - Team 8
 
-Josh Bell / Cle 1B, DH
-R17, P2 - Team Eisenhour
-
-Ke'Bryan Hayes / Pit 3B
-R17, P3 - Team English
-
-Mitch Haniger / SF OF
-R17, P4 - Team 4
-
-Paul Sewald / Sea RP
-R17, P5 - Team Gonterman
-
-Tyler Stephenson / Cin C
-R17, P6 - Team 6
-
-Ian Happ / ChC OF
-R17, P7 - Team 7
-
-Jorge Polanco / Min 2B
-R17, P8 - Team 8
-
-J.D. Martinez / LAD DH
-R17, P9 - Team 9
-
-Jordan Montgomery / StL SP
-R17, P10 - Team gagliano
-
-Javier Baez / Det SS
-R18, P1 - Team gagliano
-
-Harrison Bader / NYY OF
-R18, P2 - Team 9
-
-Ty France / Sea 1B
-R18, P3 - Team 8
-
-Tony Gonsolin / LAD SP
-R18, P4 - Team 7
-
-Ketel Marte / Ari 2B, DH
-R18, P5 - Team 6
-
-Kodai Senga / NYM SP
-R18, P6 - Team Gonterman
-
-Drew Rasmussen / TB SP
-R18, P7 - Team 4
-
-Whit Merrifield / Tor 2B, OF
-R18, P8 - Team English
-
-Brady Singer / KC SP
-R18, P9 - Team Eisenhour
-
-Jeff McNeil / NYM 2B, OF
-R18, P10 - Team Kaz
-
-Jeffrey Springs / TB SP, RP
-R19, P1 - Team Kaz
-
-Vaughn Grissom / Atl 2B
-R19, P2 - Team Eisenhour
-
-Gavin Lux / LAD 2B, OF
-R19, P3 - Team English
-
-Oscar Gonzalez / Cle OF
-R19, P4 - Team 4
-
-Josh Jung / Tex 3B
-R19, P5 - Team Gonterman
+Chris Bassitt / Tor SP
+R16, P4 - Team 7
 
 Charlie Morton / Atl SP
-R19, P6 - Team 6
+R16, P5 - Team 6
+
+Ryan Mountcastle / Bal 1B, DH
+R16, P6 - Team Eisenhour
+
+Triston Casas / Bos 1B
+R16, P7 - Team 4
+
+Hunter Brown / Hou SP
+R16, P8 - Team 3
+
+Chris Sale / Bos SP
+R16, P9 - Team 2
+
+Jake Cronenworth / SD 2B, 1B
+R16, P10 - Team 1
+
+Ian Happ / ChC OF
+R17, P1 - Team 1
+
+Ty France / Sea 1B
+R17, P2 - Team 2
+
+Cal Raleigh / Sea C
+R17, P3 - Team 3
+
+Whit Merrifield / Tor 2B, OF
+R17, P4 - Team 4
+
+Jordan Montgomery / StL SP
+R17, P5 - Team Eisenhour
 
 Rowdy Tellez / Mil 1B
+R17, P6 - Team 6
+
+Tyler Anderson / LAA SP
+R17, P7 - Team 7
+
+Josh Jung / Tex 3B
+R17, P8 - Team 8
+
+Paul Sewald / Sea RP
+R17, P9 - Team 9
+
+Drew Rasmussen / TB SP
+R17, P10 - Team 10
+
+Javier Baez / Det SS
+R18, P1 - Team 10
+
+Kodai Senga / NYM SP
+R18, P2 - Team 9
+
+Jose Miranda / Min 1B, 3B, DH
+R18, P3 - Team 8
+
+Josh Bell / Cle 1B, DH
+R18, P4 - Team 7
+
+J.D. Martinez / LAD DH
+R18, P5 - Team 6
+
+Gabriel Moreno / Ari C
+R18, P6 - Team Eisenhour
+
+Riley Greene / Det OF
+R18, P7 - Team 4
+
+Ketel Marte / Ari 2B, DH
+R18, P8 - Team 3
+
+Lars Nootbaar / StL OF
+R18, P9 - Team 2
+
+Oscar Colas / ChW OF
+R18, P10 - Team 1
+
+Thairo Estrada / SF 2B, SS
+R19, P1 - Team 1
+
+Brandon Lowe / TB 2B
+R19, P2 - Team 2
+
+Jeffrey Springs / TB SP, RP
+R19, P3 - Team 3
+
+Tony Gonsolin / LAD SP
+R19, P4 - Team 4
+
+CJ Abrams / Wsh SS
+R19, P5 - Team Eisenhour
+
+Brandon Nimmo / NYM OF
+R19, P6 - Team 6
+
+Dustin May / LAD SP
 R19, P7 - Team 7
 
-Cody Bellinger / ChC OF
+Pete Fairbanks / TB RP
 R19, P8 - Team 8
 
-Jonathan India / Cin 2B
+Oscar Gonzalez / Cle OF
 R19, P9 - Team 9
 
-Alec Bohm / Phi 3B
-R19, P10 - Team gagliano
+Jonathan India / Cin 2B
+R19, P10 - Team 10
