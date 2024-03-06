@@ -169,7 +169,7 @@ public class Ranking {
 	public static Lists run() throws Exception {
 		Scanner scan = new Scanner(System.in);
 		try {
-			Scanner fileScan = new Scanner(new File("Algorithm/batters.txt"));
+			Scanner fileScan = new Scanner(new File("Algorithm/batters2.txt"));
 			String[] batterInfo;
 			// int counter = 0;
 			ArrayList<Batter> info = new ArrayList<Batter>();
@@ -206,7 +206,7 @@ public class Ranking {
 			}
 
 			// Pitchers next
-			fileScan = new Scanner(new File("Algorithm/pitchers.txt"));
+			fileScan = new Scanner(new File("Algorithm/pitchers2.txt"));
 			String[] pitcherInfo;
 			// int counter = 0;
 			ArrayList<Pitcher> info2 = new ArrayList<Pitcher>();
@@ -260,7 +260,7 @@ public class Ranking {
 			for (Player i : stats) {
 				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
 				counter++;
-				if (counter > 25) {
+				if (counter > 26) {
 					break;
 				}
 			}
@@ -343,7 +343,7 @@ public class Ranking {
 		for (Player i : stats) {
 			System.out.println(i.id + ". " + i.name + " " + i.total);
 			counter++;
-			if (counter > 10) {
+			if (counter > 15) {
 				break;
 			}
 		}

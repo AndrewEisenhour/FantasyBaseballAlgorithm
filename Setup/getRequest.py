@@ -2,7 +2,7 @@
 import requests
 import json
 league_id = 99962
-year = 2023
+year = 2024
 leagueUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/segments/0/leagues/" + str(league_id)
 playerDataUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/segments/0/leaguedefaults/1?view=kona_player_info"
 playerUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/players?scoringPeriodId=0&view=players_wl"
