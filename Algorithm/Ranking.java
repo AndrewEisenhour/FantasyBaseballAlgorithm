@@ -1,4 +1,5 @@
 package Algorithm;
+
 import java.util.*;
 import java.io.*;
 
@@ -30,82 +31,117 @@ public class Ranking {
 		int line = -1;
 		int teamNum;
 		int counter = 1;
-		int draftPos;
+		int draftPos = 0;
 		int pickNo = 1;
+		boolean auction = false;
 		if (scan.nextLine().equals("y")) {
 			System.out.println("How many teams are in the draft?");
 			teamNum = scan.nextInt();
-			System.out.println("What draft position would you like?");
-			draftPos = scan.nextInt();
+			System.out.println("Is this a [s]nake or [a]uction draft?");
+			String draftType = scan.next();
+			if (draftType.charAt(0) == 'a') {
+				auction = true;
+			}
+
+			double budget = 0;
+			if (!auction) {
+				System.out.println("What draft position would you like?");
+				draftPos = scan.nextInt();
+				System.out.println("Input a player rank to draft them: (type 0 to stop)");
+			} else {
+				System.out.println("What's the total salary for each team?");
+				budget = scan.nextDouble();
+				scan.nextLine();
+				budget = teamNum * budget;
+				System.out.println(
+						"Input a player rank and value to draft them: (type 0 to stop)\nIf you drafted that player, type 'a' followed by the rank");
+			}
 			Team myTeam = new Team();
 			Team exTeam = new Team();
-			System.out.println("Input a player rank to draft them: (type 0 to stop)");
 			String inputLineOne = "";
 			String inputLineTwo = "";
 			String teamName;
 			String playerName;
 			while (line != 0) {
-				System.out.println("Pick number " + pickNo + ": ");
-				if (counter % (teamNum + 1) == draftPos)
-					System.out.println("It's you! Duh nu nu, duh nu nu");
-				inputLineOne = scan.nextLine();
-				if (inputLineOne.equals("")) {
+				if (!auction) {
+					System.out.println("Pick number " + pickNo + ": ");
+					if (counter % (teamNum + 1) == draftPos)
+						System.out.println("It's you! Duh nu nu, duh nu nu");
 					inputLineOne = scan.nextLine();
-				}
-				boolean manualEntry = isInt(inputLineOne);
-				if (manualEntry) {
-					line = Integer.parseInt(inputLineOne);
-				}
-				if (manualEntry && line == 0) {
-					return;
-				}
-				if (counter % (teamNum + 1) == draftPos) {
-					// System.out.println("It's you! Duh nu nu, duh nu nu");
+					if (inputLineOne.equals("")) {
+						inputLineOne = scan.nextLine();
+					}
+					boolean manualEntry = isInt(inputLineOne);
 					if (manualEntry) {
-						arr = draft(String.valueOf(line), arr, myTeam);
-						myTeam.print();
-						myTeam.printNeed();
-					} else {
-						inputLineTwo = scan.nextLine();
-						playerName = inputLineOne.split("/")[0].trim();
-						teamName = inputLineOne.split("/")[1].split(" ")[0].trim();
-						for (int i = 0; i < arr.players.size(); i++) {
-							Player player = arr.players.get(i);
-							if (player.name.equals(playerName)) {
-								arr = draft(player.id, arr, myTeam);
-								myTeam.print();
-								myTeam.printNeed();
-								break;
+						line = Integer.parseInt(inputLineOne);
+					}
+					if (manualEntry && line == 0) {
+						return;
+					}
+					if (counter % (teamNum + 1) == draftPos) {
+						// System.out.println("It's you! Duh nu nu, duh nu nu");
+						if (manualEntry) {
+							arr = draft(String.valueOf(line), arr, myTeam);
+							myTeam.print();
+							myTeam.printNeed();
+						} else {
+							inputLineTwo = scan.nextLine();
+							playerName = inputLineOne.split("/")[0].trim();
+							teamName = inputLineOne.split("/")[1].split(" ")[0].trim();
+							for (int i = 0; i < arr.players.size(); i++) {
+								Player player = arr.players.get(i);
+								if (player.name.equals(playerName)) {
+									arr = draft(player.id, arr, myTeam);
+									myTeam.print();
+									myTeam.printNeed();
+									break;
+								}
 							}
 						}
+						arr = run2(arr.batters, arr.pitchers, myTeam, teamNum, budget, auction);
+					} else {
+						if (manualEntry) {
+							arr = draftNoTeam(String.valueOf(line), arr);
+							myTeam.print();
+						} else {
+							inputLineTwo = scan.nextLine();
+							playerName = inputLineOne.split("/")[0].trim();
+							teamName = inputLineOne.split("/")[1].split(" ")[0];
+							for (int i = 0; i < arr.players.size(); i++) {
+								Player player = arr.players.get(i);
+								if (player.name.equals(playerName)) {
+									arr = draftNoTeam(player.id, arr);
+									break;
+								}
+							}
+						}
+						arr = run2(arr.batters, arr.pitchers, myTeam, teamNum, budget, auction);
 					}
-					arr = run2(arr.batters, arr.pitchers, myTeam);
+
+					counter++;
+					pickNo++;
+					if (counter > teamNum) {
+						counter = 1;
+						draftPos = teamNum + 1 - draftPos;
+					}
 				} else {
-					if (manualEntry) {
-						arr = draftNoTeam(String.valueOf(line), arr);
-						myTeam.print();
-					} else {
-						inputLineTwo = scan.nextLine();
-						playerName = inputLineOne.split("/")[0].trim();
-						teamName = inputLineOne.split("/")[1].split(" ")[0];
-						for (int i = 0; i < arr.players.size(); i++) {
-							Player player = arr.players.get(i);
-							if (player.name.equals(playerName)) {
-								arr = draftNoTeam(player.id, arr);
-								break;
-							}
+					inputLineOne = scan.nextLine();
+					String[] lineOne = inputLineOne.split(" ");
+					if (lineOne.length == 2) {
+						line = Integer.parseInt(lineOne[0]);
+						budget -= Integer.parseInt(lineOne[1]);
+						if (line == 0) {
+							return;
+						} else {
+							arr = draftNoTeam(String.valueOf(line), arr);
 						}
+					} else {
+						budget -= Integer.parseInt(lineOne[2]);
+						arr = draft(String.valueOf(lineOne[1]), arr, myTeam);
+						myTeam.print();
 					}
-					arr = run2(arr.batters, arr.pitchers, exTeam);
+					arr = run2(arr.batters, arr.pitchers, myTeam, teamNum, budget, auction);
 				}
-
-				counter++;
-				pickNo++;
-				if (counter > teamNum) {
-					counter = 1;
-					draftPos = teamNum + 1 - draftPos;
-				}
-
 			}
 		}
 		scan.close();
@@ -199,7 +235,7 @@ public class Ranking {
 						(i.rbis - gary.rbis) / rbiSD, (i.sbs - gary.sbs) / sbSD,
 						Math.max(((i.abs - gary.abs) / absSD), 1) * (i.avg - gary.avg) / avgSD,
 						i.positions, i.abs, i.hs);
-				temp.printBatter();
+				// temp.printBatter();
 				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
 				temp2 = new Player(temp.name, value, temp.id, temp.positions);
 				stats.add(temp2);
@@ -235,7 +271,7 @@ public class Ranking {
 						Math.max(((i.ips - joe.ips) / ipSD), 0) * (joe.era - i.era) / eraSD,
 						Math.max(((i.ips - joe.ips) / ipSD), 0) * (joe.whip - i.whip) / whipSD, i.positions, i.ips,
 						i.ers, i.phbbs);
-				temp3.printPitcher();
+				// temp3.printPitcher();
 				temp2 = new Player(temp3.name, temp3.ks + temp3.ws + temp3.svs + temp3.era + temp3.whip, temp3.id,
 						temp3.positions);
 				for (Player a : stats) {
@@ -257,15 +293,33 @@ public class Ranking {
 			}
 			Collections.sort(stats, new cmpTotal());
 			int counter = 1;
+			double totalPlayerValue = 0;
+			int totalGreaterThanZero = 0;
 			for (Player i : stats) {
-				System.out.println(i.id + ". " + i.name + " " + i.total + " " + i.bestPositionValue);
+				// System.out.println(i.id + ". " + i.name + " " + i.total + " " +
+				// i.bestPositionValue);
 				counter++;
-				if (counter > 26) {
-					break;
+
+				if (i.total > 0) {
+					totalGreaterThanZero++;
+					totalPlayerValue += i.total;
 				}
 			}
 			printBestAtEachPosition(stats);
-
+			System.out.println(totalPlayerValue);
+			System.out.println(totalGreaterThanZero);
+			System.out.println(counter);
+			double totalMoney = 8 * 260;
+			counter = 0;
+			for (Player i : stats) {
+				System.out.println(i.id + ". " + i.name + " $" + String.format("%.2f", ((i.total / totalPlayerValue) * totalMoney)) + " "
+						+ i.bestPositionValue);
+				counter++;
+				totalPlayerValue += i.total;
+				if (counter >= 250) {
+					break;
+				}
+			}
 			Lists list = new Lists(info, info2, stats);
 			return list;
 		} catch (FileNotFoundException e) {
@@ -274,7 +328,9 @@ public class Ranking {
 		}
 	}
 
-	public static Lists run2(ArrayList<Batter> info, ArrayList<Pitcher> info2, Team myTeam) throws Exception {
+	public static Lists run2(ArrayList<Batter> info, ArrayList<Pitcher> info2, Team myTeam, int numOfTeams,
+			double budget, boolean auction)
+			throws Exception {
 		// File batters = new File("");
 		// System.out.println(batters.getAbsolutePath());
 		// Scanner scan = new Scanner(System.in);
@@ -340,10 +396,30 @@ public class Ranking {
 
 		Collections.sort(stats, new cmpTotal());
 		int counter = 1;
+		double totalPlayerValue = 0;
+		int totalGreaterThanZero = 0;
 		for (Player i : stats) {
-			System.out.println(i.id + ". " + i.name + " " + i.total);
+			// System.out.println(i.id + ". " + i.name + " " + i.total + " " +
+			// i.bestPositionValue);
 			counter++;
-			if (counter > 15) {
+
+			if (i.total > 0) {
+				totalGreaterThanZero++;
+				totalPlayerValue += i.total;
+			}
+		}
+		counter = 0;
+		for (Player i : stats) {
+			if (auction) {
+				System.out.println(i.id + ". " + i.name + " $" + String.format("%.2f", ((i.total / totalPlayerValue) * budget)) + " "
+						+ i.bestPositionValue);
+			} else {
+				System.out.println(i.id + ". " + i.name + " " + i.total + " "
+						+ i.bestPositionValue);
+			}
+			counter++;
+			totalPlayerValue += i.total;
+			if (counter >= 10) {
 				break;
 			}
 		}

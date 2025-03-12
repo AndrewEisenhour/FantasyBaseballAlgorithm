@@ -2,10 +2,10 @@
 import requests
 import json
 league_id = 99962
-year = 2024
+year = 2025
 leagueUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/segments/0/leagues/" + str(league_id)
-playerDataUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/segments/0/leaguedefaults/1?view=kona_player_info"
-playerUrl = "https://fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/players?scoringPeriodId=0&view=players_wl"
+playerDataUrl = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/segments/0/leaguedefaults/1?view=kona_player_info"
+playerUrl = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/flb/seasons/" + str(year) + "/players?scoringPeriodId=0&view=players_wl"
 filters = { "players": { "limit": 500, "sortDraftRanks": { "sortPriority": 100, "sortAsc": True, "value": "STANDARD" } } }
 espn_headers = {
  "Connection": "keep-alive",
@@ -16,9 +16,10 @@ espn_headers = {
  "x-fantasy-source": "kona"
 }
 espn_cookies={"swid": "{2E92D10F-BFFF-42DA-92D1-0FBFFFE2DA5B}",
-                          "espn_s2": "AECYMvoKdqc5EXl7XHnD%2F0V5JL00t79IBxCw9hlQdX6poEdllC3EveSvM1jBuRyR8qu9uA6qgzu5B9O7cqN%2BDb1AhOPE%2FI6tTIjX6ScPhKdh3jnplcNvtqNmu4sBtx9YNjt3Lq7uMQViwmJ9rkmUJK9W26ZOdn8WK2qNhHp3msPKF31MYJ3jISUEJCfhcAci%2BpRjqjDIED7xL%2BXzWSnTKYhHkBRiyXLJF8ocmG6X9mkGnyGAjV8rUj88KAlnSSRJkfawwhojrQ3vkJPTGUfE2a3ZiF9MXhmw2qw60KMu67c1jQ%3D%3D"}
+                          "espn_s2": "AEBhEXLuxvFgEPQctxi7AZMOIEi3ebVipjooOCnlp%2Fwjv2gmssxL8U%2B15NUWP55lCoX%2FuK7XEdN50Bf7KlSYq6jc1hEYI45OStV5Ozvl9mXEqEtx%2F9TOfxF5c2IfBfi6Kw%2Fm%2BXkDaeMsdCem2ZyasrNfozdlwegExrmh66TDxnOTNamca%2FE8YTIJX9Rr886PKbXXgNQYBbww1tsB28vniMCPvG8rW7XcDzHURGVK16IddGg5qzd4lvOPcKNlDF4pUE1FDntCdLg9AUxl27B0gALgwN%2B9lqDeuhoWKxhxyvqNVA%3D%3D"}
 
 r = requests.get(playerDataUrl, cookies = espn_cookies, headers = espn_headers)
+print(r.text)
 rawPlayerData = r.json()
 with open('Setup/ESPNData.json', 'w') as outfile:
     json.dump(rawPlayerData, outfile)
