@@ -15,16 +15,16 @@ public class Team {
     double svNeed;
     double eraNeed;
     double whipNeed;
-    final double runs = 954.5;
-    final double hrs = 283;
-    final double rbis = 919;
-    final double sbs = 124.9;
-    final double avg = 0.265;
-    final double ks = 1190.8;
-    final double ws = 68;
-    final double svs = 55.9;
-    final double era = 3.479;
-    final double whip = 1.125;
+    final double runs = 902;
+    final double hrs = 259;
+    final double rbis = 868.9;
+    final double sbs = 159.3;
+    final double avg = 0.2607;
+    final double ks = 1120.5;
+    final double ws = 67.25;
+    final double svs = 56.9;
+    final double era = 3.531;
+    final double whip = 1.135;
     public double teamavg;
     public double teamruns;
     public double teamrbis;
@@ -86,7 +86,7 @@ public class Team {
         teamsbs += a.sbs;
         sbNeed = Math.max(1 - teamsbs / sbs, 0);
         teamavg = teamhs / teamabs;
-        avgNeed = Math.max(avg / teamavg, 1);
+        avgNeed = avg / teamavg;
     }
 
     public void pitcherCalculate() {
@@ -101,9 +101,9 @@ public class Team {
         teamsvs += a.svs;
         svNeed = Math.max(1 - teamsvs / svs, 0);
         teamera = 9 * teamers / teamips;
-        eraNeed = Math.max(teamera / era, 1);
+        eraNeed =teamera / era;
         teamwhip = teamphbbs / teamips;
-        whipNeed = Math.max(teamwhip / whip, 1);
+        whipNeed = teamwhip / whip;
     }
 
     public void addPitcher(Pitcher a, Player b) {

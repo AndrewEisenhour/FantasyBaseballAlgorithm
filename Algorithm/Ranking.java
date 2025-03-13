@@ -317,7 +317,7 @@ public class Ranking {
 				//System.out.println(i.id + ". " + i.name + " $" + String.format("%.2f", ((i.total / totalPlayerValue) * totalMoney)) + " " + i.bestPositionValue);
 				counter++;
 				totalPlayerValue += i.total;
-				if (counter >= 10) {
+				if (counter >= 20) {
 					break;
 				}
 			}
@@ -409,7 +409,7 @@ public class Ranking {
 				totalPlayerValue += i.total;
 			}
 		}
-		counter = 0;
+		counter = 1;
 		System.out.format("%9s\t%9s%28s\t%5s\t%5s\n", "ESPN Rank", "My Rank", "Name", "Value", "Position Value");
 
 		for (Player i : stats) {

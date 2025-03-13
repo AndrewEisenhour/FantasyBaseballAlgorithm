@@ -11,13 +11,14 @@ player_line = ""
 # Categories for batters and pitchers
 batter_categories = ['20', '5', '21', '23', '2', '0', '1']
 pitcher_categories = ['48', '53', '57', '47', '41', '34', '45', '37', '39']
+player_name_ranks = {}
 for player in espn_players:
     player_line = str(player['id'])
-    player_line += ":" + str(player['player']['draftRanksByRankType']['ROTO']['rank'])
+    player_line += ":" + str(player['player']['draftRanksByRankType']['STANDARD']['rank'])
     player_line += ":" + " ".join(str(x) for x in player['player']['eligibleSlots'])
     player_line += ":" + player['player']['fullName']
     player_data = player['player']['stats'][4]['stats']
-    if (player['player']['fullName']=="Juan Soto"):
+    if (str(player['player']['draftRanksByRankType']['ROTO']['rank'])=="80"):
         print(player_data)
     if '0' in player_data:
         for stat in batter_categories:

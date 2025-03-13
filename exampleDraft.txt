@@ -1,569 +1,683 @@
-Jose Ramirez / Cle 3B, DH
+Bobby Witt Jr. / KC SS
 R1, P1 - Team 1
 
-Trea Turner / Phi SS
+Shohei Ohtani / LAD DH, SP
 R1, P2 - Team 2
 
-Julio Rodriguez / Sea OF
-R1, P3 - Team 3
-
-Shohei Ohtani / LAA DH, SP
-R1, P4 - Team 4
-
 Aaron Judge / NYY OF, DH
-R1, P5 - Team Eisenhour
+R1, P3 - jesse's Scary Team
 
-Kyle Tucker / Hou OF
+Jose Ramirez / Cle 3B, DH
+R1, P4 - Andrew's Astounding Team
+
+Juan Soto / NYM OF
+R1, P5 - Team 5
+
+Kyle Tucker / ChC OF
 R1, P6 - Team 6
 
-Ronald Acuna Jr. / Atl OF, DH
+Elly De La Cruz / Cin SS
 R1, P7 - Team 7
 
-Mookie Betts / LAD OF
+Gunnar Henderson / Bal SS
 R1, P8 - Team 8
 
-Vladimir Guerrero Jr. / Tor 1B, DH
+Francisco Lindor / NYM SS
 R1, P9 - Team 9
 
-Yordan Alvarez / Hou OF, DH
-R1, P10 - Team 10
+Mookie Betts / LAD SS, OF
+R1, P10 - Benjamin's Best Team
 
-Pete Alonso / NYM 1B, DH
-R2, P1 - Team 10
-
-Freddie Freeman / LAD 1B
-R2, P2 - Team 9
-
-Bo Bichette / Tor SS
-R2, P3 - Team 8
-
-Manny Machado / SD 3B
-R2, P4 - Team 7
-
-Juan Soto / SD OF
-R2, P5 - Team 6
-
-Corbin Burnes / Mil SP
-R2, P6 - Team Eisenhour
-
-Bobby Witt Jr. / KC SS, 3B
-R2, P7 - Team 4
-
-Rafael Devers / Bos 3B
-R2, P8 - Team 3
-
-Fernando Tatis Jr. / SD SS, OF
-R2, P9 - Team 2
-
-Austin Riley / Atl 3B
-R2, P10 - Team 1
-
-Gerrit Cole / NYY SP
-R3, P1 - Team 1
-
-Sandy Alcantara / Mia SP
-R3, P2 - Team 2
-
-Mike Trout / LAA OF
-R3, P3 - Team 3
-
-Paul Goldschmidt / StL 1B, DH
-R3, P4 - Team 4
-
-Matt Olson / Atl 1B
-R3, P5 - Team Eisenhour
-
-Francisco Lindor / NYM SS
-R3, P6 - Team 6
-
-Marcus Semien / Tex 2B
-R3, P7 - Team 7
-
-Max Scherzer / NYM SP
-R3, P8 - Team 8
-
-Justin Verlander / NYM SP
-R3, P9 - Team 9
-
-Nolan Arenado / StL 3B
-R3, P10 - Team 10
-
-Brandon Woodruff / Mil SP
-R4, P1 - Team 10
-
-Michael Harris II / Atl OF
-R4, P2 - Team 9
-
-Aaron Nola / Phi SP
-R4, P3 - Team 8
-
-Shane McClanahan / TB SP
-R4, P4 - Team 7
-
-Cedric Mullins / Bal OF
-R4, P5 - Team 6
-
-Kyle Schwarber / Phi OF, DH
-R4, P6 - Team Eisenhour
-
-Zack Wheeler / Phi SP
-R4, P7 - Team 4
-
-Spencer Strider / Atl SP, RP
-R4, P8 - Team 3
-
-Randy Arozarena / TB OF, DH
-R4, P9 - Team 2
-
-Luis Robert Jr. / ChW OF
-R4, P10 - Team 1
+Julio Rodriguez / Sea OF
+R1, P11 - Team 11
 
 Corbin Carroll / Ari OF
-R5, P1 - Team 1
+R1, P12 - Team 12
 
-Ozzie Albies / Atl 2B
-R5, P2 - Team 2
+Paul Skenes / Pit SP
+R2, P1 - Team 12
 
-Corey Seager / Tex SS
-R5, P3 - Team 3
+Tarik Skubal / Det SP
+R2, P2 - Team 11
 
-Julio Urias / LAD SP
-R5, P4 - Team 4
+Vladimir Guerrero Jr. / Tor 1B, DH
+R2, P3 - Benjamin's Best Team
 
-Emmanuel Clase / Cle RP
-R5, P5 - Team Eisenhour
+Yordan Alvarez / Hou OF, DH
+R2, P4 - Team 9
 
-Dylan Cease / ChW SP
-R5, P6 - Team 6
+Zack Wheeler / Phi SP
+R2, P5 - Team 8
 
-Shane Bieber / Cle SP
-R5, P7 - Team 7
+Fernando Tatis Jr. / SD OF
+R2, P6 - Team 7
 
-Jazz Chisholm Jr. / Mia 2B, OF
-R5, P8 - Team 8
+Trea Turner / Phi SS
+R2, P7 - Team 6
 
-Adolis Garcia / Tex OF, DH
-R5, P9 - Team 9
+Jackson Chourio / Mil OF
+R2, P8 - Team 5
 
-J.T. Realmuto / Phi C
-R5, P10 - Team 10
+Christian Walker / Hou 1B
+R2, P9 - Andrew's Astounding Team
 
-Jacob deGrom / Tex SP
-R6, P1 - Team 10
+Jazz Chisholm Jr. / NYY OF, 3B
+R2, P10 - jesse's Scary Team
 
-Alek Manoah / Tor SP
-R6, P2 - Team 9
+Jackson Merrill / SD OF
+R2, P11 - Team 2
 
-Kevin Gausman / Tor SP
-R6, P3 - Team 8
+Jarren Duran / Bos OF
+R2, P12 - Team 1
 
-Luis Castillo / Sea SP
-R6, P4 - Team 7
-
-Zac Gallen / Ari SP
-R6, P5 - Team 6
-
-Logan Webb / SF SP
-R6, P6 - Team Eisenhour
-
-Teoscar Hernandez / Sea OF
-R6, P7 - Team 4
-
-Max Fried / Atl SP
-R6, P8 - Team 3
-
-Will Smith / LAD C, DH
-R6, P9 - Team 2
-
-Carlos Rodon / NYY SP
-R6, P10 - Team 1
-
-Adley Rutschman / Bal C, DH
-R7, P1 - Team 1
-
-Daulton Varsho / Tor C, OF
-R7, P2 - Team 2
-
-Eloy Jimenez / ChW OF, DH
-R7, P3 - Team 3
-
-Dansby Swanson / ChC SS
-R7, P4 - Team 4
-
-Oneil Cruz / Pit SS
-R7, P5 - Team Eisenhour
-
-George Springer / Tor OF, DH
-R7, P6 - Team 6
-
-Gunnar Henderson / Bal 3B
-R7, P7 - Team 7
-
-Wander Franco / TB SS
-R7, P8 - Team 8
-
-Salvador Perez / KC C, DH
-R7, P9 - Team 9
-
-Jeremy Pena / Hou SS
-R7, P10 - Team 10
-
-Yu Darvish / SD SP
-R8, P1 - Team 10
-
-Josh Hader / SD RP
-R8, P2 - Team 9
-
-Devin Williams / Mil RP
-R8, P3 - Team 8
-
-Starling Marte / NYM OF
-R8, P4 - Team 7
-
-Cristian Javier / Hou SP
-R8, P5 - Team 6
-
-Framber Valdez / Hou SP
-R8, P6 - Team Eisenhour
-
-Alex Bregman / Hou 3B
-R8, P7 - Team 4
-
-Xander Bogaerts / SD SS
-R8, P8 - Team 3
-
-Jose Abreu / Hou 1B, DH
-R8, P9 - Team 2
-
-Tyler O'Neill / StL OF
-R8, P10 - Team 1
-
-George Kirby / Sea SP
-R9, P1 - Team 1
-
-Jordan Romano / Tor RP
-R9, P2 - Team 2
-
-Ryan Pressly / Hou RP
-R9, P3 - Team 3
-
-Triston McKenzie / Cle SP
-R9, P4 - Team 4
-
-Andres Gimenez / Cle 2B
-R9, P5 - Team Eisenhour
-
-Nathaniel Lowe / Tex 1B
-R9, P6 - Team 6
-
-Bryan Reynolds / Pit OF
-R9, P7 - Team 7
-
-Ryan Helsley / StL RP
-R9, P8 - Team 8
-
-Robbie Ray / Sea SP
-R9, P9 - Team 9
-
-Tim Anderson / ChW SS
-R9, P10 - Team 10
+Bryce Harper / Phi 1B
+R3, P1 - Team 1
 
 Logan Gilbert / Sea SP
-R10, P1 - Team 10
+R3, P2 - Team 2
 
-Carlos Correa / Min SS
-R10, P2 - Team 9
+Freddie Freeman / LAD 1B
+R3, P3 - jesse's Scary Team
 
-Felix Bautista / Bal RP
-R10, P3 - Team 8
+Brenton Doyle / Col OF
+R3, P4 - Andrew's Astounding Team
 
-Willy Adames / Mil SS
-R10, P4 - Team 7
-
-Hunter Greene / Cin SP
-R10, P5 - Team 6
-
-Anthony Santander / Bal OF, DH
-R10, P6 - Team Eisenhour
-
-Kenley Jansen / Bos RP
-R10, P7 - Team 4
-
-Tommy Edman / StL 2B, SS
-R10, P8 - Team 3
-
-Vinnie Pasquantino / KC 1B, DH
-R10, P9 - Team 2
-
-Joe Musgrove / SD SP
-R10, P10 - Team 1
-
-Anthony Volpe / NYY SS
-R11, P1 - Team 1
-
-Blake Snell / SD SP
-R11, P2 - Team 2
-
-C.J. Cron / Col 1B, DH
-R11, P3 - Team 3
-
-Nick Castellanos / Phi OF
-R11, P4 - Team 4
-
-Raisel Iglesias / Atl RP
-R11, P5 - Team Eisenhour
-
-Alejandro Kirk / Tor C, DH
-R11, P6 - Team 6
-
-Nick Lodolo / Cin SP
-R11, P7 - Team 7
-
-Jake McCarthy / Ari OF
-R11, P8 - Team 8
-
-Kris Bryant / Col OF
-R11, P9 - Team 9
-
-Steven Kwan / Cle OF
-R11, P10 - Team 10
-
-Andrew Vaughn / ChW OF, 1B, DH
-R12, P1 - Team 10
-
-Jordan Walker / StL 3B, OF
-R12, P2 - Team 9
-
-William Contreras / Mil C, DH
-R12, P3 - Team 8
-
-Willson Contreras / StL C, DH
-R12, P4 - Team 7
-
-Camilo Doval / SF RP
-R12, P5 - Team 6
-
-Pablo Lopez / Min SP
-R12, P6 - Team Eisenhour
-
-Nestor Cortes / NYY SP
-R12, P7 - Team 4
-
-Joe Ryan / Min SP
-R12, P8 - Team 3
-
-Clayton Kershaw / LAD SP
-R12, P9 - Team 2
-
-Lucas Giolito / ChW SP
-R12, P10 - Team 1
-
-Christian Walker / Ari 1B
-R13, P1 - Team 1
-
-Lance Lynn / ChW SP
-R13, P2 - Team 2
-
-Sean Murphy / Atl C, DH
-R13, P3 - Team 3
-
-Christian Yelich / Mil OF, DH
-R13, P4 - Team 4
-
-Amed Rosario / Cle SS
-R13, P5 - Team Eisenhour
-
-Jose Altuve / Hou 2B
-R13, P6 - Team 6
-
-Alexis Diaz / Cin RP
-R13, P7 - Team 7
-
-Byron Buxton / Min OF, DH
-R13, P8 - Team 8
-
-Gleyber Torres / NYY 2B
-R13, P9 - Team 9
-
-Nico Hoerner / ChC SS, 2B
-R13, P10 - Team 10
-
-Scott Barlow / KC RP
-R14, P1 - Team 10
-
-Clay Holmes / NYY RP
-R14, P2 - Team 9
-
-Freddy Peralta / Mil SP
-R14, P3 - Team 8
-
-Joey Meneses / Wsh 1B, OF, DH
-R14, P4 - Team 7
-
-Luis Severino / NYY SP
-R14, P5 - Team 6
-
-Luis Garcia / Hou SP
-R14, P6 - Team Eisenhour
-
-Kyle Wright / Atl SP
-R14, P7 - Team 4
-
-David Bednar / Pit RP
-R14, P8 - Team 3
-
-Eugenio Suarez / Sea 3B
-R14, P9 - Team 2
-
-Jhoan Duran / Min RP
-R14, P10 - Team 1
-
-Tyler Glasnow / TB SP
-R15, P1 - Team 1
-
-Jesus Luzardo / Mia SP
-R15, P2 - Team 2
-
-Andres Munoz / Sea RP
-R15, P3 - Team 3
-
-Tyler Stephenson / Cin C, DH
-R15, P4 - Team 4
-
-Matt Chapman / Tor 3B
-R15, P5 - Team Eisenhour
-
-Max Muncy / LAD 3B, 2B, DH
-R15, P6 - Team 6
-
-Taylor Ward / LAA OF
-R15, P7 - Team 7
-
-MJ Melendez / KC C, OF, DH
-R15, P8 - Team 8
-
-Hunter Renfroe / LAA OF
-R15, P9 - Team 9
-
-Giancarlo Stanton / NYY OF, DH
-R15, P10 - Team 10
-
-Reid Detmers / LAA SP
-R16, P1 - Team 10
-
-Bryce Harper / Phi DH
-R16, P2 - Team 9
-
-Anthony Rizzo / NYY 1B
-R16, P3 - Team 8
-
-Chris Bassitt / Tor SP
-R16, P4 - Team 7
-
-Charlie Morton / Atl SP
-R16, P5 - Team 6
-
-Ryan Mountcastle / Bal 1B, DH
-R16, P6 - Team Eisenhour
-
-Triston Casas / Bos 1B
-R16, P7 - Team 4
-
-Hunter Brown / Hou SP
-R16, P8 - Team 3
-
-Chris Sale / Bos SP
-R16, P9 - Team 2
-
-Jake Cronenworth / SD 2B, 1B
-R16, P10 - Team 1
-
-Ian Happ / ChC OF
-R17, P1 - Team 1
-
-Ty France / Sea 1B
-R17, P2 - Team 2
-
-Cal Raleigh / Sea C
-R17, P3 - Team 3
-
-Whit Merrifield / Tor 2B, OF
-R17, P4 - Team 4
-
-Jordan Montgomery / StL SP
-R17, P5 - Team Eisenhour
-
-Rowdy Tellez / Mil 1B
-R17, P6 - Team 6
-
-Tyler Anderson / LAA SP
-R17, P7 - Team 7
-
-Josh Jung / Tex 3B
-R17, P8 - Team 8
-
-Paul Sewald / Sea RP
-R17, P9 - Team 9
-
-Drew Rasmussen / TB SP
-R17, P10 - Team 10
-
-Javier Baez / Det SS
-R18, P1 - Team 10
-
-Kodai Senga / NYM SP
-R18, P2 - Team 9
-
-Jose Miranda / Min 1B, 3B, DH
-R18, P3 - Team 8
-
-Josh Bell / Cle 1B, DH
-R18, P4 - Team 7
-
-J.D. Martinez / LAD DH
-R18, P5 - Team 6
-
-Gabriel Moreno / Ari C
-R18, P6 - Team Eisenhour
-
-Riley Greene / Det OF
-R18, P7 - Team 4
+Cole Ragans / KC SP
+R3, P5 - Team 5
 
 Ketel Marte / Ari 2B, DH
-R18, P8 - Team 3
+R3, P6 - Team 6
 
-Lars Nootbaar / StL OF
-R18, P9 - Team 2
+Manny Machado / SD 3B, DH
+R3, P7 - Team 7
 
-Oscar Colas / ChW OF
-R18, P10 - Team 1
+Matt Olson / Atl 1B
+R3, P8 - Team 8
 
-Thairo Estrada / SF 2B, SS
-R19, P1 - Team 1
+Austin Riley / Atl 3B
+R3, P9 - Team 9
 
-Brandon Lowe / TB 2B
-R19, P2 - Team 2
+Rafael Devers / Bos 3B
+R3, P10 - Benjamin's Best Team
 
-Jeffrey Springs / TB SP, RP
-R19, P3 - Team 3
+Garrett Crochet / Bos SP
+R3, P11 - Team 11
 
-Tony Gonsolin / LAD SP
-R19, P4 - Team 4
+Corbin Burnes / Ari SP
+R3, P12 - Team 12
+
+Dylan Cease / SD SP
+R4, P1 - Team 12
+
+Wyatt Langford / Tex OF, DH
+R4, P2 - Team 11
+
+Chris Sale / Atl SP
+R4, P3 - Benjamin's Best Team
+
+Oneil Cruz / Pit SS, OF
+R4, P4 - Team 9
+
+Brent Rooker / Ath DH
+R4, P5 - Team 8
+
+William Contreras / Mil C, DH
+R4, P6 - Team 7
+
+Corey Seager / Tex SS
+R4, P7 - Team 6
+
+Ronald Acuna Jr. / Atl OF
+R4, P8 - Team 5
+
+Yoshinobu Yamamoto / LAD SP
+R4, P9 - Andrew's Astounding Team
+
+Pete Alonso / NYM 1B
+R4, P10 - jesse's Scary Team
+
+Michael Harris II / Atl OF
+R4, P11 - Team 2
+
+Teoscar Hernandez / LAD OF
+R4, P12 - Team 1
+
+Jose Altuve / Hou 2B
+R5, P1 - Team 1
+
+Marcell Ozuna / Atl DH
+R5, P2 - Team 2
+
+Cody Bellinger / NYY OF, 1B, DH
+R5, P3 - jesse's Scary Team
+
+Lawrence Butler / Ath OF
+R5, P4 - Andrew's Astounding Team
+
+Ozzie Albies / Atl 2B
+R5, P5 - Team 5
+
+Framber Valdez / Hou SP
+R5, P6 - Team 6
+
+Emmanuel Clase / Cle RP
+R5, P7 - Team 7
+
+Michael King / SD SP
+R5, P8 - Team 8
+
+Devin Williams / NYY RP
+R5, P9 - Team 9
+
+Kyle Schwarber / Phi DH
+R5, P10 - Benjamin's Best Team
 
 CJ Abrams / Wsh SS
-R19, P5 - Team Eisenhour
+R5, P11 - Team 11
 
-Brandon Nimmo / NYM OF
-R19, P6 - Team 6
+Adley Rutschman / Bal C, DH
+R5, P12 - Team 12
 
-Dustin May / LAD SP
-R19, P7 - Team 7
+Aaron Nola / Phi SP
+R6, P1 - Team 12
+
+Shota Imanaga / ChC SP
+R6, P2 - Team 11
+
+Jacob deGrom / Tex SP
+R6, P3 - Benjamin's Best Team
+
+Bryce Miller / Sea SP
+R6, P4 - Team 9
+
+Josh Hader / Hou RP
+R6, P5 - Team 8
+
+Logan Webb / SF SP
+R6, P6 - Team 7
+
+George Kirby / Sea SP
+R6, P7 - Team 6
+
+Hunter Greene / Cin SP
+R6, P8 - Team 5
+
+James Wood / Wsh OF
+R6, P9 - Andrew's Astounding Team
+
+Salvador Perez / KC C, 1B, DH
+R6, P10 - jesse's Scary Team
+
+Pablo Lopez / Min SP
+R6, P11 - Team 2
+
+Marcus Semien / Tex 2B
+R6, P12 - Team 1
+
+Yainer Diaz / Hou C, DH
+R7, P1 - Team 1
+
+Mason Miller / Ath RP
+R7, P2 - Team 2
+
+Blake Snell / LAD SP
+R7, P3 - jesse's Scary Team
+
+Luis Arraez / SD 1B, 2B, DH
+R7, P4 - Andrew's Astounding Team
+
+Christian Yelich / Mil OF, DH
+R7, P5 - Team 5
+
+Edwin Diaz / NYM RP
+R7, P6 - Team 6
+
+Felix Bautista / Bal RP
+R7, P7 - Team 7
+
+Ryan Helsley / StL RP
+R7, P8 - Team 8
+
+Anthony Santander / Tor OF, DH
+R7, P9 - Team 9
+
+Bryan Reynolds / Pit OF, DH
+R7, P10 - Benjamin's Best Team
+
+Junior Caminero / TB 3B
+R7, P11 - Team 11
+
+Raisel Iglesias / Atl RP
+R7, P12 - Team 12
+
+Willy Adames / SF SS
+R8, P1 - Team 12
+
+Ezequiel Tovar / Col SS
+R8, P2 - Team 11
+
+Tyler Glasnow / LAD SP
+R8, P3 - Benjamin's Best Team
+
+Cal Raleigh / Sea C
+R8, P4 - Team 9
+
+Willson Contreras / StL C, DH
+R8, P5 - Team 8
+
+Bailey Ober / Min SP
+R8, P6 - Team 7
+
+Josh Naylor / Ari 1B
+R8, P7 - Team 6
+
+Jordan Westburg / Bal 3B, 2B
+R8, P8 - Team 5
+
+Ryan Walker / SF RP
+R8, P9 - Andrew's Astounding Team
+
+Mike Trout / LAA OF
+R8, P10 - jesse's Scary Team
+
+Andres Munoz / Sea RP
+R8, P11 - Team 2
+
+Matt Chapman / SF 3B
+R8, P12 - Team 1
+
+Jhoan Duran / Min RP
+R9, P1 - Team 1
+
+Max Fried / NYY SP
+R9, P2 - Team 2
+
+Spencer Schwellenbach / Atl SP
+R9, P3 - jesse's Scary Team
+
+Will Smith / LAD C
+R9, P4 - Andrew's Astounding Team
+
+Matt McLain / Cin SS, 2B
+R9, P5 - Team 5
+
+Royce Lewis / Min 3B, DH
+R9, P6 - Team 6
+
+Alex Bregman / Bos 3B
+R9, P7 - Team 7
+
+Mark Vientos / NYM 3B
+R9, P8 - Team 8
+
+Roki Sasaki / LAD SP
+R9, P9 - Team 9
+
+Seiya Suzuki / ChC OF, DH
+R9, P10 - Benjamin's Best Team
+
+Spencer Strider / Atl SP
+R9, P11 - Team 11
+
+Robert Suarez / SD RP
+R9, P12 - Team 12
+
+Dylan Crews / Wsh OF
+R10, P1 - Team 12
+
+Luis Robert Jr. / ChW OF
+R10, P2 - Team 11
+
+Hunter Brown / Hou SP
+R10, P3 - Benjamin's Best Team
+
+Luis Castillo / Sea SP
+R10, P4 - Team 9
+
+Freddy Peralta / Mil SP
+R10, P5 - Team 8
+
+Justin Steele / ChC SP
+R10, P6 - Team 7
+
+Zac Gallen / Ari SP
+R10, P7 - Team 6
+
+Triston Casas / Bos 1B
+R10, P8 - Team 5
+
+Kodai Senga / NYM SP
+R10, P9 - Andrew's Astounding Team
+
+Bo Bichette / Tor SS
+R10, P10 - jesse's Scary Team
+
+Vinnie Pasquantino / KC 1B, DH
+R10, P11 - Team 2
+
+Kevin Gausman / Tor SP
+R10, P12 - Team 1
+
+Riley Greene / Det OF, DH
+R11, P1 - Team 1
+
+Sandy Alcantara / Mia SP
+R11, P2 - Team 2
+
+Matt Shaw / ChC 3B, 2B, SS
+R11, P3 - jesse's Scary Team
+
+Jeremy Pena / Hou SS
+R11, P4 - Andrew's Astounding Team
+
+Shea Langeliers / Ath C
+R11, P5 - Team 5
+
+Ian Happ / ChC OF
+R11, P6 - Team 6
+
+Jeff Hoffman / Tor RP
+R11, P7 - Team 7
+
+Tanner Scott / LAD RP
+R11, P8 - Team 8
+
+Randy Arozarena / Sea OF
+R11, P9 - Team 9
+
+Shane McClanahan / TB SP
+R11, P10 - Benjamin's Best Team
+
+Logan O'Hoppe / LAA C
+R11, P11 - Team 11
+
+Josh Lowe / TB OF
+R11, P12 - Team 12
+
+Jake Burger / Tex 1B, 3B, DH
+R12, P1 - Team 12
+
+Joe Ryan / Min SP
+R12, P2 - Team 11
+
+Luis Garcia Jr. / Wsh 2B
+R12, P3 - Benjamin's Best Team
+
+Bryan Woo / Sea SP
+R12, P4 - Team 9
+
+Steven Kwan / Cle OF
+R12, P5 - Team 8
+
+Pete Crow-Armstrong / ChC OF
+R12, P6 - Team 7
+
+Sonny Gray / StL SP
+R12, P7 - Team 6
+
+Tanner Bibee / Cle SP
+R12, P8 - Team 5
+
+Griffin Jax / Min RP
+R12, P9 - Andrew's Astounding Team
+
+Trevor Megill / Mil RP
+R12, P10 - jesse's Scary Team
+
+Spencer Steer / Cin OF, 1B
+R12, P11 - Team 2
+
+Alexis Diaz / Cin RP
+R12, P12 - Team 1
+
+Reynaldo Lopez / Atl SP
+R13, P1 - Team 1
+
+Brice Turang / Mil 2B
+R13, P2 - Team 2
+
+Robbie Ray / SF SP
+R13, P3 - jesse's Scary Team
+
+Jung Hoo Lee / SF OF
+R13, P4 - Andrew's Astounding Team
+
+Seth Lugo / KC SP
+R13, P5 - Team 5
+
+Adolis Garcia / Tex OF, DH
+R13, P6 - Team 6
+
+Jackson Holliday / Bal 2B
+R13, P7 - Team 7
+
+Cristopher Sanchez / Phi SP
+R13, P8 - Team 8
+
+Bryson Stott / Phi 2B
+R13, P9 - Team 9
+
+Xavier Edwards / Mia SS
+R13, P10 - Benjamin's Best Team
+
+Jack Flaherty / Det SP
+R13, P11 - Team 11
+
+Jasson Dominguez / NYY OF
+R13, P12 - Team 12
+
+Isaac Paredes / Hou 3B
+R14, P1 - Team 12
+
+David Bednar / Pit RP
+R14, P2 - Team 11
+
+Eugenio Suarez / Ari 3B
+R14, P3 - Benjamin's Best Team
+
+Grayson Rodriguez / Bal SP
+R14, P4 - Team 9
+
+Taylor Ward / LAA OF
+R14, P5 - Team 8
+
+Yusei Kikuchi / LAA SP
+R14, P6 - Team 7
+
+J.T. Realmuto / Phi C
+R14, P7 - Team 6
+
+Carlos Rodon / NYY SP
+R14, P8 - Team 5
+
+Jason Adam / SD RP
+R14, P9 - Andrew's Astounding Team
+
+Jordan Romano / Phi RP
+R14, P10 - jesse's Scary Team
+
+Tyler Stephenson / Cin C
+R14, P11 - Team 2
 
 Pete Fairbanks / TB RP
+R14, P12 - Team 1
+
+Jose Berrios / Tor SP
+R15, P1 - Team 1
+
+Anthony Volpe / NYY SS
+R15, P2 - Team 2
+
+Kenley Jansen / LAA RP
+R15, P3 - jesse's Scary Team
+
+Maikel Garcia / KC 3B, 2B
+R15, P4 - Andrew's Astounding Team
+
+Nick Pivetta / SD SP
+R15, P5 - Team 5
+
+Jared Jones / Pit SP
+R15, P6 - Team 6
+
+Colton Cowser / Bal OF
+R15, P7 - Team 7
+
+Xander Bogaerts / SD 2B, SS
+R15, P8 - Team 8
+
+Paul Goldschmidt / NYY 1B
+R15, P9 - Team 9
+
+Tyler O'Neill / Bal OF
+R15, P10 - Benjamin's Best Team
+
+Andres Gimenez / Tor 2B
+R15, P11 - Team 11
+
+Luis Rengifo / LAA 3B, 2B
+R15, P12 - Team 12
+
+Ryan Pepiot / TB SP
+R16, P1 - Team 12
+
+Michael Toglia / Col 1B
+R16, P2 - Team 11
+
+Dansby Swanson / ChC SS
+R16, P3 - Benjamin's Best Team
+
+Ryan Pressly / ChC RP
+R16, P4 - Team 9
+
+Kerry Carpenter / Det OF, DH
+R16, P5 - Team 8
+
+Yandy Diaz / TB 1B, DH
+R16, P6 - Team 7
+
+Ronel Blanco / Hou SP
+R16, P7 - Team 6
+
+Alec Bohm / Phi 3B
+R16, P8 - Team 5
+
+Brendan Donovan / StL OF, 2B
+R16, P9 - Andrew's Astounding Team
+
+Walker Buehler / Bos SP
+R16, P10 - jesse's Scary Team
+
+Nolan Arenado / StL 3B
+R16, P11 - Team 2
+
+Masyn Winn / StL SS
+R16, P12 - Team 1
+
+Tanner Houck / Bos SP
+R17, P1 - Team 1
+
+Heliot Ramos / SF OF
+R17, P2 - Team 2
+
+Nico Hoerner / ChC 2B
+R17, P3 - jesse's Scary Team
+
+Cade Smith / Cle RP
+R17, P4 - Andrew's Astounding Team
+
+Zach Eflin / Bal SP
+R17, P5 - Team 5
+
+Zach Neto / LAA SS
+R17, P6 - Team 6
+
+Nick Castellanos / Phi OF
+R17, P7 - Team 7
+
+Jurickson Profar / Atl OF
+R17, P8 - Team 8
+
+Rhys Hoskins / Mil 1B, DH
+R17, P9 - Team 9
+
+Taj Bradley / TB SP
+R17, P10 - Benjamin's Best Team
+
+Lourdes Gurriel Jr. / Ari OF
+R17, P11 - Team 11
+
+Jorge Soler / LAA OF, DH
+R17, P12 - Team 12
+
+Lane Thomas / Cle OF
+R18, P1 - Team 12
+
+Ceddanne Rafaela / Bos OF, SS
+R18, P2 - Team 11
+
+Lucas Erceg / KC RP
+R18, P3 - Benjamin's Best Team
+
+Brandon Nimmo / NYM OF
+R18, P4 - Team 9
+
+Gleyber Torres / Det 2B
+R18, P5 - Team 8
+
+Jonathan India / KC 2B
+R18, P6 - Team 7
+
+Hyeseong Kim / LAD 2B
+R18, P7 - Team 6
+
+Ryan Mountcastle / Bal 1B
+R18, P8 - Team 5
+
+Orion Kerkering / Phi RP
+R18, P9 - Andrew's Astounding Team
+
+Brandon Lowe / TB 2B, DH
+R18, P10 - jesse's Scary Team
+
+Mitch Keller / Pit SP
+R18, P11 - Team 2
+
+Kyle Finnegan / Wsh RP
+R18, P12 - Team 1
+
+George Springer / Tor OF, DH
+R19, P1 - Team 1
+
+Shane Baz / TB SP
+R19, P2 - Team 2
+
+Nolan Jones / Col OF
+R19, P3 - jesse's Scary Team
+
+Alec Burleson / StL OF, DH
+R19, P4 - Andrew's Astounding Team
+
+Tommy Edman / LAD OF, SS
+R19, P5 - Team 5
+
+Michael Busch / ChC 1B
+R19, P6 - Team 6
+
+Josh Jung / Tex 3B
+R19, P7 - Team 7
+
+Zack Gelof / Ath 2B
 R19, P8 - Team 8
 
-Oscar Gonzalez / Cle OF
+Bryan Abreu / Hou RP
 R19, P9 - Team 9
 
-Jonathan India / Cin 2B
-R19, P10 - Team 10
+Austin Wells / NYY C
+R19, P10 - Benjamin's Best Team
+
+Thairo Estrada / Col 2B
+R19, P11 - Team 11
+
+Ranger Suarez / Phi SP
+R19, P12 - Team 12
