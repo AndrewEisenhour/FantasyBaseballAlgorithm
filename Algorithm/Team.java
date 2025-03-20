@@ -1,4 +1,5 @@
 package Algorithm;
+
 import java.util.*;
 
 public class Team {
@@ -15,16 +16,30 @@ public class Team {
     double svNeed;
     double eraNeed;
     double whipNeed;
-    final double runs = 902;
-    final double hrs = 259;
-    final double rbis = 868.9;
-    final double sbs = 159.3;
-    final double avg = 0.2607;
-    final double ks = 1120.5;
-    final double ws = 67.25;
-    final double svs = 56.9;
-    final double era = 3.531;
-    final double whip = 1.135;
+    final double runs = 974.1;
+    final double hrs = 282.2;
+    final double rbis = 924.2;
+    final double sbs = 197.2;
+    final double avg = 0.266;
+    final double ks = 1288.3;
+    final double ws = 78.8;
+    final double svs = 87.2;
+    final double era = 3.42;
+    final double whip = 1.11;
+    /*
+     * Two SDs: 1046.139939
+     * 305.2168955
+     * 979.3957999
+     * 235.0799871
+     * 0.272500886
+     * 1456.008072
+     * 90.25905619
+     * 117.4942111
+     * 74.60252759
+     * 3.316130697
+     * 1.089174243
+     */
+
     public double teamavg;
     public double teamruns;
     public double teamrbis;
@@ -101,7 +116,7 @@ public class Team {
         teamsvs += a.svs;
         svNeed = Math.max(1 - teamsvs / svs, 0);
         teamera = 9 * teamers / teamips;
-        eraNeed =teamera / era;
+        eraNeed = teamera / era;
         teamwhip = teamphbbs / teamips;
         whipNeed = teamwhip / whip;
     }

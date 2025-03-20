@@ -286,8 +286,10 @@ public class Ranking {
 			double[][] positionalValue = positionAvg(stats);
 			for (Player i : stats) {
 				for (int position : i.positions) {
-					i.bestPositionValue = Math.max(i.bestPositionValue,
-							(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+					if (position != 10) {
+						i.bestPositionValue = Math.max(i.bestPositionValue,
+								(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+					}
 				}
 				i.total += i.bestPositionValue;
 			}
@@ -313,8 +315,10 @@ public class Ranking {
 			counter = 1;
 			System.out.format("%9s\t%9s%28s\t%5s\t%5s\n", "ESPN Rank", "My Rank", "Name", "Value", "Position Value");
 			for (Player i : stats) {
-				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, i.total, i.bestPositionValue, "");
-				//System.out.println(i.id + ". " + i.name + " $" + String.format("%.2f", ((i.total / totalPlayerValue) * totalMoney)) + " " + i.bestPositionValue);
+				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, i.total,
+						i.bestPositionValue, "");
+				// System.out.println(i.id + ". " + i.name + " $" + String.format("%.2f",
+				// ((i.total / totalPlayerValue) * totalMoney)) + " " + i.bestPositionValue);
 				counter++;
 				totalPlayerValue += i.total;
 				if (counter >= 20) {
@@ -389,8 +393,10 @@ public class Ranking {
 		double[][] positionalValue = positionAvg(stats);
 		for (Player i : stats) {
 			for (int position : i.positions) {
-				i.bestPositionValue = Math.max(i.bestPositionValue,
-						(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+				if (position != 11) {
+					i.bestPositionValue = Math.max(i.bestPositionValue,
+							(i.total - positionalValue[position][0]) / positionalValue[position][1]);
+				}
 			}
 			i.total += i.bestPositionValue;
 		}
@@ -415,10 +421,12 @@ public class Ranking {
 		for (Player i : stats) {
 			if (auction) {
 				double auctionValue = (i.total / totalPlayerValue) * budget;
-				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, auctionValue, i.bestPositionValue, "");
+				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, auctionValue,
+						i.bestPositionValue, "");
 
 			} else {
-				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, i.total, i.bestPositionValue, "");
+				System.out.format("|%9s\t%9d%28s\t%.2f\t%.2f%10s|\n", i.id, counter, i.name, i.total,
+						i.bestPositionValue, "");
 
 			}
 			counter++;
