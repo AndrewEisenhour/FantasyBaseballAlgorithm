@@ -18,7 +18,7 @@ for player in espn_players:
     player_line += ":" + " ".join(str(x) for x in player['player']['eligibleSlots'])
     player_line += ":" + player['player']['fullName']
     player_data = player['player']['stats'][4]['stats']
-    if (str(player['player']['draftRanksByRankType']['ROTO']['rank'])=="80"):
+    if (str(player['player']['draftRanksByRankType']['ROTO']['rank'])=="1"):
         print(player_data)
     if '0' in player_data:
         for stat in batter_categories:

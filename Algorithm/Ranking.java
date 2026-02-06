@@ -238,6 +238,9 @@ public class Ranking {
 				// temp.printBatter();
 				value = temp.runs + temp.hrs + temp.rbis + temp.sbs + temp.avg;
 				temp2 = new Player(temp.name, value, temp.id, temp.positions);
+				if (i.name.equals("Munetaka Murakami")){
+					System.out.println("here");
+				}
 				stats.add(temp2);
 			}
 

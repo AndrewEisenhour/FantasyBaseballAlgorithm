@@ -9,7 +9,14 @@
             "name": "Ranking",
             "request": "launch",
             "mainClass": "Algorithm.Ranking",
-            "projectName": "FantasyBaseballAlgorithm_baca722e"
+            "projectName": "FantasyBaseballAlgorithm_53cc34b8"
+        },
+        {
+            "type": "java",
+            "name": "Ranking",
+            "request": "launch",
+            "mainClass": "Algorithm.Ranking",
+            "projectName": "FantasyBaseballAlgorithm"
         },
         {
             "type": "java",
